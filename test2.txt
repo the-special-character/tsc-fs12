@@ -1,1 +1,1 @@
-hello test2.txt
+hello test2
