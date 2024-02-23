@@ -3,3 +3,4 @@ hello text 3
 change from fast forward
 hello text2
 hello git
+hello merge test login 2
