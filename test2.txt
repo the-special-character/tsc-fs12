@@ -6,3 +6,4 @@ change from no ff 2
 
 change from squash branch 2
 hello text
+hello merge test login 1
