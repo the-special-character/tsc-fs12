@@ -1,3 +1,8 @@
 hello test2.txt
 
+change 3
+
+change from no ff 2
+
+change from squash branch 2
 hello text

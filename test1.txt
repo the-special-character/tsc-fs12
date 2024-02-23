@@ -1,3 +1,10 @@
 hello test 1
 
 how are you test..
+
+change 2
+
+change from no ff 1
+
+change from squash branch 1
+hello merge test 3
