@@ -2,3 +2,10 @@ hello test 1
 
 how are you test..
  method 1 
+
+change 2
+
+change from no ff 1
+
+change from squash branch 1
+hello merge test 3
