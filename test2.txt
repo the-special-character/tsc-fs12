@@ -3,3 +3,10 @@ method1
 method2
 method3
 
+
+change 3
+
+change from no ff 2
+
+change from squash branch 2
+hello text

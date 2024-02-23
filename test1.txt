@@ -4,3 +4,10 @@ how are you test..
 method1
 method2
 method3
+
+change 2
+
+change from no ff 1
+
+change from squash branch 1
+hello merge test 3
