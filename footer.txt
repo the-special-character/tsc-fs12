@@ -2,3 +2,6 @@ hello footer
 
 change 1
 chnage footer
+changed footer 1
+
+method 3 
