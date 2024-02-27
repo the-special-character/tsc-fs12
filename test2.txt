@@ -4,9 +4,14 @@ method2
 method3
 
 
+<<<<<<< HEAD
 change 3
 
 change from no ff 2
 
 change from squash branch 2
 hello text
+hello merge test login 1
+=======
+hello merge test login 1
+>>>>>>> 238417c8629e29e764df1ddf0e70ff561d59366e

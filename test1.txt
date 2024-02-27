@@ -11,3 +11,5 @@ change from no ff 1
 
 change from squash branch 1
 hello merge test 3
+try to learn conflict for rebase
+learn to resolve conflict
