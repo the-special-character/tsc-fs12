@@ -2,3 +2,12 @@ hello test 1
 
 how are you test..
 how are you test1.txt
+
+change 2
+
+change from no ff 1
+
+change from squash branch 1
+hello merge test 3
+try to learn conflict for rebase
+learn to resolve conflict

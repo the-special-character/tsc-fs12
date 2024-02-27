@@ -1,5 +1,9 @@
 hello test2.txt
 
-hello text
+<<<<<<< HEAD
+change 3
 
-how are you
+change from no ff 2
+
+change from squash branch 2
+hello text
