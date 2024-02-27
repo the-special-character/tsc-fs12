@@ -1,1 +1,2 @@
-hi from krupal
+hi from krupal patel
+i am full stack developer
