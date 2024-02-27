@@ -1,5 +1,10 @@
 hello text 3
 
+<<<<<<< HEAD
 change from fast forward
 hello text2
 hello git
+hello merge test login 2
+=======
+hello merge test login 2
+>>>>>>> 238417c8629e29e764df1ddf0e70ff561d59366e
