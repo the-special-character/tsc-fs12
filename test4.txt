@@ -4,6 +4,3 @@ How are you
 
 
 change from fast forward 1
-hello merge test login 3
-learn conflict fro test4
-commit change in test4 for conflict from rebase branch
