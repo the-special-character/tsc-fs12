@@ -11,3 +11,5 @@ change from squash branch 1
 hello merge test 3
 
 hello 123
+
+hello 456
