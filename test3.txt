@@ -1,5 +1,7 @@
 hello text 3
 method 1
+method2
+method3
 
 change from fast forward
 hello text2

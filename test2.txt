@@ -1,4 +1,8 @@
 hello test2.txt
+method1
+method2
+method3
+
 method 1
 
 change 3
