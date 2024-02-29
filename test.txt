@@ -12,3 +12,4 @@ check for conflict
 
 commmit for rebase test3
 rebase for test3
+check for concflict
