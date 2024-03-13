@@ -94,23 +94,45 @@
     <!-- microsfot clarity -->
   </head>
   <body style="width: 100%">
-    <form>
+    <form oninput="ageResult.value = age.value">
       <fieldset>
         <legend>Name</legend>
         <div>
           <label for="firstName">First Name</label>
-          <input type="text" id="firstName" />
+          <input type="text" id="firstName" autocomplete="given-name" />
         </div>
         <div>
           <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" />
+          <input type="text" id="lastName" autocomplete="family-name" />
         </div>
       </fieldset>
       <div>
         <label for="email">email</label>
-        <input type="email" name="Email" id="email" />
+        <input type="text" inputmode="email" pattern="[^@\s]+@[^@\s]+[.][^@\s]+" title="Invalid email address" />
+      </div>
+
+      <div>
+        <label for="age">Age</label>
+        <input type="range" id="age" min="0" max="100" value="18">
+        <output name="ageResult" for="age">18</output>
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" autocomplete="current-password" />
       </div>
       <div>
+        <label for="serch">Search</label>
+        <input type="search" name="search" id="search"> 
+      <div>
+        <div>
+          <label for="file">Birth Date & Time</label>
+          <input type="datetime-local" name="birthDate" id="birthDate"> 
+        <div>
+          <div>
+            <label for="file">File</label>
+            <input type="file" name="file" id="file" multiple accept="image/*"> 
+          <div>
         <label for="hobbies">Hobbies</label>
         <select name="hobbies" id="hobbies" multiple>
           <option value="">Please Select Hobby</option>
