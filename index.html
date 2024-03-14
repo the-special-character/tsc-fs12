@@ -89,17 +89,24 @@
         scroll-behavior: smooth;
       }
     </style>
+   
+   <!-- input element form  -->
+   <!-- button submit -->
+   <!-- input element without label(Accesibility) -->
+   <!-- group inputs fieldset/legend(Accesibility) -->
+   <!-- autocomplete -->
+    
 
     <!-- google analytics -->
     <!-- microsfot clarity -->
   </head>
   <body style="width: 100%">
-    <form oninput="ageResult.value = age.value">
+    <form  id="register" oninput="ageResult.value = age.value">
       <fieldset>
         <legend>Name</legend>
         <div>
           <label for="firstName">First Name</label>
-          <input type="text" id="firstName" autocomplete="given-name" />
+          <input type="text" id="firstName" required autocomplete="given-name" onchange="onchage()" />
         </div>
         <div>
           <label for="lastName">Last Name</label>
@@ -168,6 +175,9 @@
           <input type="radio" name="gender" id="female" />
         </div>
       </fieldset>
+      <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="70">at 50/100</meter>
+      
+
       <button type="submit">Cick me</button>
     </form>
 
@@ -335,5 +345,32 @@
       <a href=""> </a>
       <a href="mailto:yagnesh.modh@gmail.com">yagnesh.modh@gmail.com</a>
     </address> -->
+
+    <script>
+      // function submitForm(e) {
+      //   e.preventDefault();
+      //   console.log("Form Submitted");
+      // }
+
+      // const firstName = document.getElementById("firstName");
+
+      // firstName.addEventListener("change", (e) => {
+      //   console.log(e.target.value);
+      // })
+
+      // console.log(firstName);
+
+  </script>
+
+<script>
+  function onchage() {
+      console.log("hello world");
+
+      document.getElementById("register").addEventListener("", (e) => {
+        e.preventDefault();
+        console.log(e.target);
+      })
+  }
+</script>
   </body>
 </html>
