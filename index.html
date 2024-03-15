@@ -99,8 +99,62 @@
 
     <!-- google analytics -->
     <!-- microsfot clarity -->
+    <style>
+      .box {
+        height: 100vh;
+        background-color: coral;
+      }
+
+      @media screen and (min-width: 640px) {
+        .box {
+          background-color: red;
+      }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .box {
+          background-color: yellow;
+      }
+      }
+
+      
+/* 
+      @media screen and (max-width: 720px) {
+        .box {
+          background-color: yellow;
+      }
+      }
+
+      @media screen and (max-width: 320px) {
+        .box {
+          background-color: red;
+      }
+      } */
+
+      
+    </style>
+
   </head>
   <body style="width: 100%">
+<!-- 
+    <div class="box">
+
+    </div> -->
+
+    <!-- <img src="nordwood-themes-bJjsKbToY34-unsplash-ezgif.com-jpg-to-avif-converter.avif" alt="Tsc banner" height="300px" width="400px"> -->
+
+    <!-- <picture>
+      <source srcset="banner.avif" type="image/avif" />
+      <source srcset="banner.webp" type="image/webp" />
+      <img src="banner.png" alt="Tsc banner" height="300px" width="400px">
+    </picture> -->
+
+    <picture>
+      <source srcset="banner@1x.jpg" media="(max-width: 320px)" />
+      <source srcset="banner@2x.jpg" media="(max-width: 720px)" />
+      <img src="banner@3x.jpg" alt="Tsc banner" height="300px" width="400px">
+    </picture>
+
     <form  id="register" oninput="ageResult.value = age.value">
       <fieldset>
         <legend>Name</legend>
@@ -374,3 +428,15 @@
 </script>
   </body>
 </html>
+
+
+<!-- firstName only string required --> 
+<!-- lastName only string -->
+<!-- addess -->
+<!-- streetname1 required -->
+<!-- streetname2 required -->
+<!-- state required -->
+<!-- city required -->
+<!-- pincode required validation exact 6 -->
+<!-- phonennumber required valid phonenumber 8690090417 +918690090417 -->
+<!-- email email pattern -->
