@@ -149,11 +149,53 @@
       <img src="banner.png" alt="Tsc banner" height="300px" width="400px">
     </picture> -->
 
-    <picture>
+    <!-- <picture>
       <source srcset="banner@1x.jpg" media="(max-width: 320px)" />
       <source srcset="banner@2x.jpg" media="(max-width: 720px)" />
       <img src="banner@3x.jpg" alt="Tsc banner" height="300px" width="400px">
+    </picture> -->
+
+    <picture>
+      <source srcset="banner@1x.jpg, banner@2x.jpg 1.5x, banner@3x.jpg 2x" />
+      <img src="banner@3x.jpg" alt="MDN Web Docs logo" height="320" width="400px" />
     </picture>
+
+    <button type="button" id="btnPlay">
+      Play Audio
+    </button>
+
+    <audio id="audio">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3" />
+      <!-- <source src="myAudio.ogg" type="audio/ogg" /> -->
+      <p>
+        Download <a href="myAudio.mp3" download="myAudio.mp3">MP3</a> or
+        <a href="myAudio.ogg" download="myAudio.ogg">OGG</a> audio.
+      </p>
+    </audio>
+
+    
+    <script>
+      const audio = document.getElementById("audio")
+      const playButton = document.getElementById("btnPlay");
+
+      playButton.addEventListener("click", () => {
+        audio.play();
+      })
+
+    </script>
+
+
+<video controls width="250" poster="banner@3x.jpg" controlslist="nofullscreen nodownload noremoteplayback noplaybackrate foobar" disablepictureinpicture>
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+
+  Download the
+  <a href="/media/cc0-videos/flower.webm">WEBM</a>
+  or
+  <a href="/media/cc0-videos/flower.mp4">MP4</a>
+  video.
+</video>
 
     <form  id="register" oninput="ageResult.value = age.value">
       <fieldset>
