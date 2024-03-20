@@ -16,6 +16,10 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://metatags.io/" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
     <meta
       property="og:title"
       content="Meta Tags — Preview, Edit and Generate"
@@ -89,13 +93,12 @@
         scroll-behavior: smooth;
       }
     </style>
-   
-   <!-- input element form  -->
-   <!-- button submit -->
-   <!-- input element without label(Accesibility) -->
-   <!-- group inputs fieldset/legend(Accesibility) -->
-   <!-- autocomplete -->
-    
+
+    <!-- input element form  -->
+    <!-- button submit -->
+    <!-- input element without label(Accesibility) -->
+    <!-- group inputs fieldset/legend(Accesibility) -->
+    <!-- autocomplete -->
 
     <!-- google analytics -->
     <!-- microsfot clarity -->
@@ -108,17 +111,16 @@
       @media screen and (min-width: 640px) {
         .box {
           background-color: red;
-      }
+        }
       }
 
       @media screen and (min-width: 1024px) {
         .box {
           background-color: yellow;
-      }
+        }
       }
 
-      
-/* 
+      /* 
       @media screen and (max-width: 720px) {
         .box {
           background-color: yellow;
@@ -130,13 +132,168 @@
           background-color: red;
       }
       } */
+    </style>
+    <style>
+      /* #about h2  {
+        color: blue;
+      } */
+
+      h2.aboutHeading {
+        color: blue;
+      }
+    </style>
+
+    <style>
+      /* #banner h2  {
+        color: green;
+      } */
+      h2.bannerHeading {
+        color: green;
+      }
+    </style>
+    
+    <style>
+      header > a {
+        color: black
+      }
+    </style>
+
+    <!-- space -->
+    <!-- every children and grand children -->
+
+    <!-- > -->
+    <!-- only immidiate children -->
+
+    <!-- + -->
+    <!-- only immidiate sibling -->
+
+    <!-- ~ -->
+    <!-- every sibling -->
+
+    <style>
+      section > h2 {
+        color: red;
+      }
+
+      section > h3 {
+        color: red;
+      }
+
+      ul ~ a {
+        text-decoration: none;
+        color: #fff;
+        background-color: #000;
+        font-size: 16;
+        text-transform: capitalize;
+        padding: 10px;
+      }
 
       
+
+
+      ul > li:nth-child(3n) > a {
+        color: green;
+      }
+
+      input[type="checkbox"]:checked {
+        accent-color: green;
+      }
+
+
+      input[type="checkbox"]:checked + p {
+        color: green;
+      }
+
+      h1 {
+        font-size: 24px;
+        position: relative;
+      }
+
+      h1::after {
+        content: "";
+        width: 0;
+        height: 5px;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        background-color: red;
+      }
+
+      h1:hover::after {
+        width: 100%;
+      }
+
+      h1::
+
     </style>
+
+    
+
 
   </head>
   <body style="width: 100%">
-<!-- 
+    
+    <main>
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <div>
+        <input type="checkbox" name="" id="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique quaerat voluptate iusto! Blanditiis nobis cum quis maiores rerum, dolores quidem ducimus sapiente incidunt repellat! Laborum, dolorem! Quasi, tempore? Quaerat.</p>
+      </div>
+        <section>
+          <h2>About Page</h2>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eum!</h3>
+          <ul>
+            <li>
+              <a href="#item1">Item 1</a>
+            </li>
+            <li>
+              <a href="#item2">Item 2</a>
+            </li>
+            <li>
+              <a href="#item3">Item 3</a>
+            </li>
+            <li>
+              <a href="#item4">Item 4</a>
+            </li>
+            <li>
+              <a href="#item1">Item 5</a>
+            </li>
+            <li>
+              <a href="#item2">Item 6</a>
+            </li>
+            <li>
+              <a href="#item3">Item 7</a>
+            </li>
+            <li>
+              <a href="#item4">Item 8</a>
+            </li>
+            <li>
+              <a href="#item4">Item 9</a>
+            </li>
+          </ul>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quam sit facere repellendus. Ad fugit blanditiis tempore recusandae natus non consectetur in provident, fugiat nobis numquam placeat quia a temporibus?</p>
+          <a href="#moreAbout">More</a>
+        </section>
+        <section>
+          <h2>Home Page</h2>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eum!</h3>
+          <ul>
+            <li>
+              <a href="#item1">Item 1</a>
+            </li>
+            <li>
+              <a href="#item2">Item 2</a>
+            </li>
+            <li>
+              <a href="#item3">Item 3</a>
+            </li>
+          </ul>
+          <a href="#moreAbout">More</a>
+        </section>
+    </main>
+
+
+    <!-- 
     <div class="box">
 
     </div> -->
@@ -155,26 +312,24 @@
       <img src="banner@3x.jpg" alt="Tsc banner" height="300px" width="400px">
     </picture> -->
 
-    <picture>
+    <!-- <picture>
       <source srcset="banner@1x.jpg, banner@2x.jpg 1.5x, banner@3x.jpg 2x" />
       <img src="banner@3x.jpg" alt="MDN Web Docs logo" height="320" width="400px" />
-    </picture>
+    </picture> -->
 
-    <button type="button" id="btnPlay">
+    <!-- <button type="button" id="btnPlay">
       Play Audio
-    </button>
+    </button> -->
 
-    <audio id="audio">
+    <!-- <audio id="audio">
       <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3" />
-      <!-- <source src="myAudio.ogg" type="audio/ogg" /> -->
       <p>
         Download <a href="myAudio.mp3" download="myAudio.mp3">MP3</a> or
         <a href="myAudio.ogg" download="myAudio.ogg">OGG</a> audio.
       </p>
-    </audio>
+    </audio> -->
 
-    
-    <script>
+    <!-- <script>
       const audio = document.getElementById("audio")
       const playButton = document.getElementById("btnPlay");
 
@@ -182,10 +337,9 @@
         audio.play();
       })
 
-    </script>
+    </script> -->
 
-
-<video controls width="250" poster="banner@3x.jpg" controlslist="nofullscreen nodownload noremoteplayback noplaybackrate foobar" disablepictureinpicture>
+    <!-- <video controls width="250" poster="banner@3x.jpg" controlslist="nofullscreen nodownload noremoteplayback noplaybackrate foobar" disablepictureinpicture>
   <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
 
   <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
@@ -195,9 +349,9 @@
   or
   <a href="/media/cc0-videos/flower.mp4">MP4</a>
   video.
-</video>
+</video> -->
 
-    <form  id="register" oninput="ageResult.value = age.value">
+    <!-- <form  id="register" oninput="ageResult.value = age.value">
       <fieldset>
         <legend>Name</legend>
         <div>
@@ -275,7 +429,7 @@
       
 
       <button type="submit">Cick me</button>
-    </form>
+    </form> -->
 
     <!-- <header>
       <h1>Logo</h1>
@@ -455,24 +609,22 @@
       // })
 
       // console.log(firstName);
+    </script>
 
-  </script>
+    <script>
+      function onchage() {
+        console.log("hello world");
 
-<script>
-  function onchage() {
-      console.log("hello world");
-
-      document.getElementById("register").addEventListener("", (e) => {
-        e.preventDefault();
-        console.log(e.target);
-      })
-  }
-</script>
+        document.getElementById("register").addEventListener("", (e) => {
+          e.preventDefault();
+          console.log(e.target);
+        });
+      }
+    </script>
   </body>
 </html>
 
-
-<!-- firstName only string required --> 
+<!-- firstName only string required -->
 <!-- lastName only string -->
 <!-- addess -->
 <!-- streetname1 required -->
