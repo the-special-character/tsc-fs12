@@ -188,9 +188,6 @@
         padding: 10px;
       }
 
-      
-
-
       ul > li:nth-child(3n) > a {
         color: green;
       }
@@ -223,7 +220,40 @@
         width: 100%;
       }
 
-      h1::
+      div > p:first-of-type {
+        color: red;
+      }
+
+      button:double-button {
+        color: red
+      }
+
+      /* p:empty {
+        padding: 10px;
+        border: 1px solid red;
+      } */
+
+      
+      fieldset:has(input[type="radio"]:checked) {
+        border-color: red;
+      }
+
+      div :where(h1,h2,h3) {
+        color: blue
+      }
+
+      :is(header, main)  > h1 {
+        color: green;
+      }
+
+      input:ta {
+        outline: green auto 5px;
+      }
+ 
+
+      input:user-invalid {
+        border: 2px solid red;
+      }
 
     </style>
 
@@ -232,8 +262,46 @@
 
   </head>
   <body style="width: 100%">
+      <form>
+          <input type="text" required>
+          <button type="submit">Submit</button>
+        </form>
+
+      <header>
+        <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, numquam. Velit quas veritatis quidem ad molestias fuga sequi, minus, sint impedit aliquid iusto ab explicabo hic quaerat. Expedita, molestias eos.</h1>
+      </header>
+
+      <main>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ratione reiciendis officiis recusandae fuga eos temporibus et atque. Sit, exercitationem aliquid! Libero eos enim doloribus ea voluptates. Unde, cum sit!</h1>
+      </main>
+
+
+
+    
+    <fieldset>
+      <legend>Gender</legend>
+      <div>
+        <input type="radio" name="gender" id="male">
+        <label for="male">Male</label>
+      </div>
+      <div>
+        <input type="radio" name="gender" id="female">
+        <label for="female">Female</label>
+      </div>
+    </fieldset>
+
+
+
+    <button>click me</button>
     
     <main>
+      <div>
+        <span>span Lorem ipsum dolor sit amet.</span>
+        <p>p  Lorem ipsum dolor sit amet.</p>  
+        <button>Hello button</button>
+        <p>p Lorem ipsum dolor sit amet.</p>
+      </div>
+
       <h1>Lorem ipsum dolor sit amet.</h1>
       <div>
         <input type="checkbox" name="" id="">
