@@ -88,181 +88,82 @@
         ]
       }
     </script>
+
+
+
     <style>
-      html {
-        scroll-behavior: smooth;
+
+      /* static measure */
+      /* px */
+      /* pt */
+      /* cm */
+      /* mm */
+
+      /* relative measure */
+      /* percentage */
+
+      p {
+        font-size: clamp(1rem, -0.1625rem + 5.1668vw, 4rem);
       }
-    </style>
 
-    <!-- input element form  -->
-    <!-- button submit -->
-    <!-- input element without label(Accesibility) -->
-    <!-- group inputs fieldset/legend(Accesibility) -->
-    <!-- autocomplete -->
-
-    <!-- google analytics -->
-    <!-- microsfot clarity -->
-    <style>
       .box {
         height: 100vh;
-        background-color: coral;
+        width: 100vw;
+        background-color: yellow;
       }
 
-      @media screen and (min-width: 640px) {
-        .box {
-          background-color: red;
-        }
-      }
-
-      @media screen and (min-width: 1024px) {
-        .box {
-          background-color: yellow;
-        }
-      }
-
-      /* 
-      @media screen and (max-width: 720px) {
-        .box {
-          background-color: yellow;
-      }
-      }
-
-      @media screen and (max-width: 320px) {
-        .box {
-          background-color: red;
-      }
-      } */
-    </style>
-    <style>
-      /* #about h2  {
-        color: blue;
-      } */
-
-      h2.aboutHeading {
-        color: blue;
-      }
-    </style>
-
-    <style>
-      /* #banner h2  {
-        color: green;
-      } */
-      h2.bannerHeading {
-        color: green;
-      }
-    </style>
-    
-    <style>
-      header > a {
-        color: black
-      }
-    </style>
-
-    <!-- space -->
-    <!-- every children and grand children -->
-
-    <!-- > -->
-    <!-- only immidiate children -->
-
-    <!-- + -->
-    <!-- only immidiate sibling -->
-
-    <!-- ~ -->
-    <!-- every sibling -->
-
-    <style>
-      section > h2 {
-        color: red;
-      }
-
-      section > h3 {
-        color: red;
-      }
-
-      ul ~ a {
-        text-decoration: none;
-        color: #fff;
-        background-color: #000;
-        font-size: 16;
-        text-transform: capitalize;
-        padding: 10px;
-      }
-
-      ul > li:nth-child(3n) > a {
-        color: green;
-      }
-
-      input[type="checkbox"]:checked {
-        accent-color: green;
-      }
-
-
-      input[type="checkbox"]:checked + p {
-        color: green;
-      }
-
-      h1 {
-        font-size: 24px;
-        position: relative;
-      }
-
-      h1::after {
-        content: "";
-        width: 0;
-        height: 5px;
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        background-color: red;
-      }
-
-      h1:hover::after {
-        width: 100%;
-      }
-
-      div > p:first-of-type {
-        color: red;
-      }
-
-      button:double-button {
-        color: red
-      }
-
-      /* p:empty {
-        padding: 10px;
-        border: 1px solid red;
-      } */
-
-      
-      fieldset:has(input[type="radio"]:checked) {
-        border-color: red;
-      }
-
-      div :where(h1,h2,h3) {
-        color: blue
-      }
-
-      :is(header, main)  > h1 {
-        color: green;
-      }
-
-      input:ta {
-        outline: green auto 5px;
-      }
- 
-
-      input:user-invalid {
-        border: 2px solid red;
-      }
 
     </style>
-
-    
-
-
   </head>
-  <body style="width: 100%">
-      <form>
+  <body >
+
+    <div class="box">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatum aliquid expedita obcaecati fuga unde iusto dicta, nam eaque enim.</p>
+    </div>
+
+
+
+    <!-- <div style="width: 300px">
+      <div style="position: relative; background-color: yellow; padding: 20px">
+        <input type="text" style="height: 40px; width: 100%" />
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
+          style="position: absolute; top: 28px; right: 28px"
+        >
+          <path
+            d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <header id="header">
+      <a href="Logo">Logo</a>
+      <a href="Logo">Logo</a>
+      <a href="Logo">Logo</a>
+    </header>
+
+    <script>
+      const header = document.getElementById("header");
+
+      document.addEventListener("scroll", (e) => {
+        var scrolled = document.scrollingElement.scrollTop;
+        console.log(scrolled);
+        header.style.backgroundColor = "green";
+        if (scrolled > 50) {
+          header.style.backgroundColor = "yellow";
+        }
+        if (scrolled > 100) {
+          header.style.backgroundColor = "coral";
+        }
+      });
+    </script> -->
+
+    <!-- <form>
           <input type="text" required>
           <button type="submit">Submit</button>
         </form>
@@ -273,12 +174,9 @@
 
       <main>
         <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ratione reiciendis officiis recusandae fuga eos temporibus et atque. Sit, exercitationem aliquid! Libero eos enim doloribus ea voluptates. Unde, cum sit!</h1>
-      </main>
+      </main> -->
 
-
-
-    
-    <fieldset>
+    <!-- <fieldset>
       <legend>Gender</legend>
       <div>
         <input type="radio" name="gender" id="male">
@@ -288,13 +186,11 @@
         <input type="radio" name="gender" id="female">
         <label for="female">Female</label>
       </div>
-    </fieldset>
+    </fieldset> -->
 
+    <!-- <button>click me</button> -->
 
-
-    <button>click me</button>
-    
-    <main>
+    <!-- <main>
       <div>
         <span>span Lorem ipsum dolor sit amet.</span>
         <p>p  Lorem ipsum dolor sit amet.</p>  
@@ -358,8 +254,7 @@
           </ul>
           <a href="#moreAbout">More</a>
         </section>
-    </main>
-
+    </main> -->
 
     <!-- 
     <div class="box">
