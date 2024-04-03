@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 20% 1fr;
+            width: 320px;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .box:nth-child(1) {
+            background-color: coral;
+            grid-column: 1 / -1;
+            grid-row: 1 / -1
+        }
+        .box:nth-child(2) {
+            background-color: dodgerblue;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            grid-column: 1 / -1;
+            grid-row: 2 / -1
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
