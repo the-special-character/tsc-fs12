@@ -112,7 +112,12 @@
               },
             ],
           },
-          extend: {},
+          extend: {
+            aspectRatio: {
+              "hrect": "4 / 3",
+              "vrect": "3 / 4",
+            },
+          },
         },
       };
     </script>
@@ -121,20 +126,33 @@
         a {
           @apply font-open text-link hover:text-secondary;
         }
+
+        #about {
+          @apply flex gap-10 max-w-7xl mx-auto flex-wrap;
+        }
+
+        #about > div:nth-child(1) {
+          @apply flex-1 bg-box basis-72;
+        }
+
+        #about > :where(.image1, .image2) {
+          @apply aspect-vrect bg-box w-full md:w-64;
+        }
       }
       @layer components {
         .btn {
           @apply px-6 py-4 rounded-full text-button font-inter;
         }
         .btn.btn--primary {
-          @apply bg-primary text-white hover:bg-white hover:text-primary hover:border hover:border-primary;
+          @apply bg-primary text-white fill-white hover:bg-white hover:text-primary hover:border hover:border-primary hover:fill-primary;
         }
 
         .btn.btn--secondary {
-          @apply bg-whiteBackground text-primary hover:bg-secondary hover:text-white font-normal;
+          @apply bg-whiteBackground text-primary fill-primary hover:bg-secondary hover:text-white hover:fill-white font-normal;
         }
 
-        .btn.round {
+        .btn.btn--round {
+          @apply aspect-square;
         }
 
         .card {
@@ -154,8 +172,24 @@
     <main>
       <button class="btn btn--primary">Download Resume</button>
       <button class="btn btn--secondary">Download Resume</button>
+      <button class="btn btn--secondary btn--round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
+        >
+          <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+        </svg>
+      </button>
       <section id="banner"></section>
-      <section id="about"></section>
+      <section id="about">
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, expedita, similique hic architecto ipsa corporis quo atque porro quos excepturi facere delectus ut sint a vitae eaque incidunt commodi? Itaque.</p>
+        </div>
+        <div class="image1"></div>
+        <div class="image2"></div>
+      </section>
       <section id="work"></section>
       <section id="testimonials"></section>
       <section id="connect"></section>

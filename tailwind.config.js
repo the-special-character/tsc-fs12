@@ -106,7 +106,12 @@ module.exports = {
       open: ["Open Sans", "sans-serif"],
       inter: ["Inter", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      aspectRatio: {
+        "hrect": "4 / 3",
+        "vrect": "3 / 4",
+      },
+    },
   },
   plugins: [],
 };
