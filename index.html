@@ -8,31 +8,161 @@
     <script>
       tailwind.config = {
         theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-            },
+          colors: {
+            primary: "#263238",
+            secondary: "#ff8c92",
+            box: "#f2f2f2",
+            content: "#4e4e4e",
+            pinkBackground: "#fdf1fd",
+            whiteBackground: "#f2f2f2",
+            primaryLightBackground: "#f3eaeb",
+            lightGrayBackground: "#f2f6f7",
+            white: "#fff",
           },
+          fontFamily: {
+            open: ["Open Sans", "sans-serif"],
+            inter: ["Inter", "sans-serif"],
+          },
+          fontSize: {
+            h1: [
+              "3.0625rem",
+              {
+                lineHeight: "2rem",
+                letterSpacing: "0.01em",
+                fontWeight: "800",
+              },
+            ],
+            h2: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            h3: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            h4: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            h5: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            h6: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            body: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            list: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            link: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            quote: [
+              "1.875rem",
+              {
+                lineHeight: "2.25rem",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            button: [
+              "1.125rem",
+              {
+                lineHeight: "1.6875rem",
+                fontWeight: "500",
+              },
+            ],
+          },
+          extend: {},
         },
       };
     </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        a {
+          @apply font-open text-link hover:text-secondary;
+        }
+      }
+      @layer components {
+        .btn {
+          @apply px-6 py-4 rounded-full text-button font-inter;
+        }
+        .btn.btn--primary {
+          @apply bg-primary text-white hover:bg-white hover:text-primary hover:border hover:border-primary;
+        }
+
+        .btn.btn--secondary {
+          @apply bg-whiteBackground text-primary hover:bg-secondary hover:text-white font-normal;
+        }
+
+        .btn.round {
+        }
+
+        .card {
+        }
+
+        .info {
+        }
+      }
+      @layer utilities {
+      }
+    </style>
   </head>
   <body>
     <header>
-        <nav>
-
-        </nav>
+      <nav></nav>
     </header>
     <main>
-        <section id="banner"></section>
-        <section id="about"></section>
-        <section id="work"></section>
-        <section id="testimonials"></section>
-        <section id="connect"></section>
-        <section id="divider"></section>
-        <section id="services"></section>
-        <section id="blogs"></section>
-        <section id="contact"></section>
+      <button class="btn btn--primary">Download Resume</button>
+      <button class="btn btn--secondary">Download Resume</button>
+      <section id="banner"></section>
+      <section id="about"></section>
+      <section id="work"></section>
+      <section id="testimonials"></section>
+      <section id="connect"></section>
+      <section id="divider"></section>
+      <section id="services"></section>
+      <section id="blogs"></section>
+      <section id="contact"></section>
     </main>
     <footer></footer>
   </body>
