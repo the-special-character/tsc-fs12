@@ -1,128 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          colors: {
-            primary: "#263238",
-            secondary: "#ff8c92",
-            box: "#f2f2f2",
-            content: "#4e4e4e",
-            pinkBackground: "#fdf1fd",
-            whiteBackground: "#f2f2f2",
-            primaryLightBackground: "#f3eaeb",
-            lightGrayBackground: "#f2f6f7",
-            white: "#fff",
-          },
-          fontFamily: {
-            open: ["Open Sans", "sans-serif"],
-            inter: ["Inter", "sans-serif"],
-          },
-          fontSize: {
-            h1: [
-              "1.5rem",
-              {
-                lineHeight: "2rem",
-                letterSpacing: "-0.01em",
-                fontWeight: "500",
-              },
-            ],
-            h2: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h3: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h4: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h5: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h6: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            body: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            list: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            link: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            quote: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            button: [
-              "1.125rem",
-              {
-                lineHeight: "1.6875rem",
-                fontWeight: "500",
-              },
-            ],
-          },
-          extend: {
-            aspectRatio: {
-              "hrect": "4 / 3",
-              "vrect": "3 / 4",
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        colors: {
+          primary: "#263238",
+          secondary: "#ff8c92",
+          box: "#f2f2f2",
+          content: "#4e4e4e",
+          pinkBackground: "#fdf1fd",
+          whiteBackground: "#f2f2f2",
+          primaryLightBackground: "#f3eaeb",
+          lightGrayBackground: "#f2f6f7",
+          white: "#fff",
+          card: "#ECE6E7"
+        },
+        fontFamily: {
+          open: ["Open Sans", "sans-serif"],
+          inter: ["Inter", "sans-serif"],
+        },
+        fontSize: {
+          h1: [
+            "1.5rem",
+            {
+              lineHeight: "2rem",
+              letterSpacing: "-0.01em",
+              fontWeight: "500",
             },
+          ],
+          h2: [
+            "3rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          h3: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          h4: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          h5: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          h6: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          body: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          list: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          link: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          quote: [
+            "1.875rem",
+            {
+              lineHeight: "2.25rem",
+              letterSpacing: "-0.02em",
+              fontWeight: "700",
+            },
+          ],
+          button: [
+            "1.50rem",
+            {
+              lineHeight: "1.6875rem",
+              fontWeight: "500",
+            },
+          ],
+        },
+        extend: {
+          aspectRatio: {
+            "hrect": "4 / 3",
+            "vrect": "3 / 4",
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer base {
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
         a {
           @apply font-open text-link hover:text-secondary;
         }
@@ -141,14 +143,14 @@
       }
       @layer components {
         .btn {
-          @apply px-6 py-4 rounded-full text-button font-inter;
+          @apply px-14 py-9 rounded-full text-button font-inter;
         }
         .btn.btn--primary {
           @apply bg-primary text-white fill-white hover:bg-white hover:text-primary hover:border hover:border-primary hover:fill-primary;
         }
 
         .btn.btn--secondary {
-          @apply bg-whiteBackground text-primary fill-primary hover:bg-secondary hover:text-white hover:fill-white font-normal;
+          @apply bg-whiteBackground py-8 px-14 text-primary fill-primary hover:bg-secondary hover:text-white hover:fill-white font-normal;
         }
 
         .btn.btn--round {
@@ -164,40 +166,123 @@
       @layer utilities {
       }
     </style>
-  </head>
-  <body>
-    <header>
-      <nav></nav>
-    </header>
-    <main>
-      <button class="btn btn--primary">Download Resume</button>
-      <button class="btn btn--secondary">Download Resume</button>
-      <button class="btn btn--secondary btn--round">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24"
-          viewBox="0 -960 960 960"
-          width="24"
-        >
-          <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
-        </svg>
-      </button>
-      <section id="banner"></section>
-      <section id="about">
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, expedita, similique hic architecto ipsa corporis quo atque porro quos excepturi facere delectus ut sint a vitae eaque incidunt commodi? Itaque.</p>
+</head>
+
+<body>
+  <header>
+    <nav></nav>
+  </header>
+  <main>
+    <button class="btn btn--primary">Download Resume</button>
+    <button class="btn btn--secondary">Download Resume</button>
+    <button class="btn btn--secondary btn--round">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+        <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+      </svg>
+    </button>
+    <section id="banner"></section>
+    <!-- <section id="about">
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, expedita, similique hic architecto ipsa
+          corporis quo atque porro quos excepturi facere delectus ut sint a vitae eaque incidunt commodi? Itaque.</p>
+      </div>
+      <div class="image1"></div>
+      <div class="image2"></div>
+    </section> -->
+    <section id="work">
+      <section
+        class="main max-w-[90vw] gap-y-20 flex flex-col items-center justify-center rounded-3xl  mx-auto bg-lightGrayBackground">
+        <div id="content" class="mt-44 gap-7 flex flex-col justify-center items-center ">
+          <h1 class="text-center text-h2">My Creative Work</h1>
+          <p class="text-center w-[78%] text-h1">Rapid growth in digital technology is changing my development world with these creative crafts.</p>
         </div>
-        <div class="image1"></div>
-        <div class="image2"></div>
+        <div class="card flex w-[90%] h-[60vh]  bg-card rounded-[50px] ">
+          <div id="left" class="flex-1  flex flex-col py-7 px-7 gap-y-14  lg:pt-36 lg:px-10  h-full  ">
+            <div class="flex flex-col gap-9">
+              <h1 class="text-h2">Crytop Trading page</h1>
+              <p class="text-h1 w-3/4">We completely analyze your requirement with deep research and numerous iterations for
+                finalizing the outcome done for you.</p>
+            </div>
+
+            <button class="btn btn--secondary text-h1 text-center  w-fit">
+              Read Case only
+            </button>
+
+          </div>
+          <div id="right" class=" hidden md:hidden lg:block flex-1 ">
+            <img src="/WhatsApp Image 2024-04-12 at 10.42.49_21fc2228.jpg" alt="" srcset=""
+              class="bg-cover object-fill  h-full w-full overflow-hidden rounded-r-[50px]">
+          </div>
+        </div>
+        <div class="card flex w-[90%] h-[60vh] bg-card rounded-[50px]">
+          <div id="left" class=" hidden  md:hidden lg:block flex-1 ">
+            <img src="/WhatsApp Image 2024-04-12 at 10.42.49_21fc2228.jpg" alt="" srcset=""
+              class="bg-cover object-fill h-full w-full overflow-hidden rounded-l-[50px]">
+          </div>
+          <div id="right" class="flex-1 flex flex-col gap-y-14 p-5 lg:pt-36 lg:ml-10 h-full">
+            <div class="flex flex-col gap-9">
+              <h1 class="text-h2">Crytop Trading page</h1>
+              <p class="text-h1 w-3/4">We completely analyze your requirement with deep research and numerous iterations for
+                finalizing the outcome done for you.</p>
+            </div>
+
+            <button class="btn btn--secondary text-h1  w-fit">
+              Read Case only
+            </button>
+
+          </div>
+        </div>
+        <div class="card flex w-[90%] h-[60vh] bg-card rounded-[50px] ">
+          <div id="left" class="flex-1  flex flex-col py-7 px-7 gap-y-14  lg:pt-36 lg:px-10  h-full  ">
+            <div class="flex flex-col gap-9">
+              <h1 class="text-h2">Crytop Trading page</h1>
+              <p class="text-h1 w-3/4">We completely analyze your requirement with deep research and numerous iterations for
+                finalizing the outcome done for you.</p>
+            </div>
+
+            <button class="btn btn--secondary  text-h1 text-center  w-fit">
+              Read Case only
+            </button>
+
+          </div>
+          <div id="right" class=" hidden md:hidden lg:block flex-1  ">
+            <img src="/WhatsApp Image 2024-04-12 at 10.42.49_21fc2228.jpg" alt="" srcset=""
+              class="bg-cover object-fill  h-full w-full overflow-hidden rounded-r-[50px]">
+          </div>
+        </div>
+        <div class="card flex w-[90%] h-[60vh] bg-card rounded-[50px]">
+          <div id="left" class=" hidden  md:hidden lg:block flex-1 ">
+            <img src="/WhatsApp Image 2024-04-12 at 10.42.49_21fc2228.jpg" alt="" srcset=""
+              class="bg-cover object-fill h-full w-full overflow-hidden rounded-l-[50px]">
+          </div>
+          <div id="right" class="flex-1 flex flex-col gap-y-14 p-5 lg:pt-36 lg:ml-10 h-full">
+            <div class="flex flex-col gap-9">
+              <h1 class="text-h2">Crytop Trading page</h1>
+              <p class="text-h1 w-3/4">We completely analyze your requirement with deep research and numerous iterations for
+                finalizing the outcome done for you.</p>
+            </div>
+
+            <button class="btn btn--secondary text-h1  w-fit">
+              Read Case only
+            </button>
+
+          </div>
+        </div>
+        <div>
+          <button class="btn btn--primary mt-16">Contact Me</button>
+        </div>
+      
+        <div class="card"></div>
       </section>
-      <section id="work"></section>
-      <section id="testimonials"></section>
-      <section id="connect"></section>
-      <section id="divider"></section>
-      <section id="services"></section>
-      <section id="blogs"></section>
-      <section id="contact"></section>
-    </main>
-    <footer></footer>
-  </body>
+    </section>
+    <section id="testimonials"></section>
+    <section id="connect"></section>
+    <section id="divider"></section>
+    <section id="services"></section>
+    <section id="blogs"></section>
+    <section id="contact"></section>
+  </main>
+  <footer></footer>
+</body>
+
 </html>

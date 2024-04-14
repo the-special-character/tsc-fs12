@@ -11,6 +11,7 @@ module.exports = {
       primaryLightBackground: "#f3eaeb",
       lightGrayBackground: "#f2f6f7",
       white: "#fff",
+      card: "#ECE6E7"
     },
     fontSize: {
       h1: [
@@ -22,7 +23,7 @@ module.exports = {
         },
       ],
       h2: [
-        "1.875rem",
+        "3rem",
         {
           lineHeight: "2.25rem",
           letterSpacing: "-0.02em",
