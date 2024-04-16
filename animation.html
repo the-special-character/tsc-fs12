@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(-25%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+
+      
+
+      input[type="range"] {
+        accent-color: pink;
+      }
+
+      input[type="checkbox"]:focus {
+        accent-color: pink;
+      }
+
+
+      @layer utilities,base, components ;
+
+
+      @layer base {
+        h1 {
+            color: blue;
+        }
+      }
+
+      @layer utilities {
+        h1 {
+         color: green;
+        }
+      }
+    
+      @layer components {
+        h1 {
+         color: red;
+        }
+      }
+
+     
+
+    </style>
+  </head>
+  <body>
+    <section class="container mx-auto">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At asperiores ratione unde odit corrupti veritatis placeat obcaecati eaque explicabo, harum sed dolorem laudantium non fugiat, quas deleniti laborum voluptatem autem!</p>
+    </section>
+
+    <section class="flex gap-4">
+        <div class="size-10 bg-red-500"></div>
+        <div class="size-10 bg-red-500"></div>
+        <div class="size-10 bg-red-500"></div>
+    </section>
+
+    </section>
+
+    <form action="">
+        <div>
+            <label for="name" class="sr-only">Enter your name here</label>
+            <input type="text" id="name" class="border border-red-200">
+        </div>
+
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, hic?</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, soluta?</h1>
+    </form>
+
+    <!-- box shadow -->
+    <!-- gradiant -->
+    <!-- origin -->
+    <!-- backgrop -->
+    <!-- scroll -->
+
+    <!-- <div class="box"></div>
+    <input type="range" name="" id="">
+    <input type="checkbox" name="" id=""> -->
+  </body>
+</html>
