@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      @keyframes bounce {
+      /* @keyframes bounce {
         0%,
         100% {
           transform: translateY(-25%);
@@ -47,14 +47,93 @@
         h1 {
          color: red;
         }
+      } */
+
+      body {
+        height: 100vh;
+        display: grid;
+        place-content: center;
       }
 
-     
+      .box {
+        height: 200px;
+        width: 200px;
+        background: rgb(0, 106, 255);
+        background: linear-gradient(
+          346deg,
+          rgba(0, 106, 255, 1) 23%,
+          rgba(255, 149, 0, 1) 66%
+        );
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
 
+      h1 {
+        text-shadow: 5px 5px 3px black;
+      }
+
+      dialog::backdrop {
+        background-color: rgba(0,0,0, 0)
+      }
+
+      .rect {
+        width: 200px;
+        height: 320px;
+        background-color: red;
+        transition: all 2s linear;
+      }
+
+      .rect:hover {
+        transform-origin: 200px 320px;
+        transform: perspective(500px) translateZ(0) rotateY(100deg);
+      }
     </style>
+    
   </head>
   <body>
-    <section class="container mx-auto">
+
+    <div class="rect"></div>
+    
+    <!-- <button id="showDialogBtn">Show a dialog</button>
+    <dialog id="favDialog">
+      <header>
+        <h1>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis,
+          temporibus!
+        </h1>
+      </header>
+
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iste
+          repellat iure at quis quia reprehenderit quisquam, cum, nostrum quam
+          vel voluptas maiores assumenda enim minima dolorem sunt dolores
+          quidem.
+        </p>
+      </main>
+      <footer>
+        <button id="cacelButton">Cancel</button>
+        <button>Apply</button>
+      </footer>
+    </dialog>
+    <script>
+      const button = document.getElementById("showDialogBtn");
+      const dialog = document.getElementById("favDialog");
+      const cancelButton = document.getElementById("cacelButton");
+
+      
+
+      button.addEventListener("click", function() {
+        dialog.showModal();
+      })
+
+      cancelButton.addEventListener("click", function() {
+        dialog.close()
+      })
+      
+    </script> -->
+  
+    <!-- <section class="container mx-auto">
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At asperiores ratione unde odit corrupti veritatis placeat obcaecati eaque explicabo, harum sed dolorem laudantium non fugiat, quas deleniti laborum voluptatem autem!</p>
     </section>
 
@@ -74,7 +153,7 @@
 
         <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, hic?</h1>
         <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, soluta?</h1>
-    </form>
+    </form> -->
 
     <!-- box shadow -->
     <!-- gradiant -->
@@ -85,5 +164,11 @@
     <!-- <div class="box"></div>
     <input type="range" name="" id="">
     <input type="checkbox" name="" id=""> -->
+    <script>
+      // const showDialogBtn = document.getElementById("showDialogBtn");
+      // const favDialog = document.getElementById("favDialog");
+
+      // showDialogBtn.addEventListener("click", () => favDialog.showModal());
+    </script>
   </body>
 </html>
