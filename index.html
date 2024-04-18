@@ -5,173 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          colors: {
-            primary: "#263238",
-            secondary: "#ff8c92",
-            box: "#f2f2f2",
-            content: "#4e4e4e",
-            pinkBackground: "#fdf1fd",
-            whiteBackground: "#f2f2f2",
-            primaryLightBackground: "#f3eaeb",
-            lightGrayBackground: "#f2f6f7",
-            white: "#fff",
-          },
-          fontFamily: {
-            open: ["Open Sans", "sans-serif"],
-            inter: ["Inter", "sans-serif"],
-          },
-          fontSize: {
-            h1: [
-              "1.5rem",
-              {
-                lineHeight: "2rem",
-                letterSpacing: "-0.01em",
-                fontWeight: "500",
-              },
-            ],
-            h2: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h3: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h4: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h5: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h6: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            body: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            list: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            link: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            quote: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            button: [
-              "1.125rem",
-              {
-                lineHeight: "1.6875rem",
-                fontWeight: "500",
-              },
-            ],
-          },
-          extend: {
-            aspectRatio: {
-              "hrect": "4 / 3",
-              "vrect": "3 / 4",
-            },
-          },
-        },
-      };
-    </script>
+    <script src="./tailwind.js"></script>
     <style type="text/tailwindcss">
-      @layer base {
-        a {
-          @apply font-open text-link hover:text-secondary;
-        }
-
-        #about {
-          @apply flex gap-10 max-w-7xl mx-auto flex-wrap;
-        }
-
-        #about > div:nth-child(1) {
-          @apply flex-1 bg-box basis-72;
-        }
-
-        #about > :where(.image1, .image2) {
-          @apply aspect-vrect bg-box w-full md:w-64;
-        }
+      h1 {
+        @apply text-h1 font-open text-primary;
       }
-      @layer components {
-        .btn {
-          @apply px-6 py-4 rounded-full text-button font-inter;
-        }
-        .btn.btn--primary {
-          @apply bg-primary text-white fill-white hover:bg-white hover:text-primary hover:border hover:border-primary hover:fill-primary;
-        }
 
-        .btn.btn--secondary {
-          @apply bg-whiteBackground text-primary fill-primary hover:bg-secondary hover:text-white hover:fill-white font-normal;
-        }
+      h2 {
 
-        .btn.btn--round {
-          @apply aspect-square;
-        }
-
-        .card {
-        }
-
-        .info {
-        }
       }
-      @layer utilities {
+
+      h3 {
+
+      }
+      h4 {
+
+      }
+      h5 {
+
+      }
+      h6 {
+
+      }
+
+      p {
+
+      }
+
+      p.small {
+
+      }
+
+      p.large {
+
+      }
+
+      ul > li {
+
+      }
+
+      ol > li {}
+
+      blockquote {
+
+      } 
+
+      button {
+
+      }
+
+      span {
+
+      }
+
+      label {
+
+      }
+
+      a {
+
       }
     </style>
+    <!-- <link rel="stylesheet" type="text/tailwindcss" href="./style.css"> -->
   </head>
   <body>
     <header>
       <nav></nav>
     </header>
+    <blockquote></blockquote>
     <main>
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet.</h3>
+      <h4>Lorem ipsum dolor sit amet.</h4>
+      <h5>Lorem ipsum dolor sit amet.</h5>
+      <h6>Lorem ipsum dolor sit amet.</h6>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</li>
+      </ul>
+      <ol>
+        <ul>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</ul>
+        <ul>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</ul>
+        <ul>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</ul>
+      </ol>
+      <blockquote>
+        A successful website does three things: It attracts the right kinds of visitors. Guides them to the main services or product you offer. Collect Contact details for future ongoing relation.
+      </blockquote>
       <button class="btn btn--primary">Download Resume</button>
+      <button class="btn btn--primary btn--small">Download Resume</button>
+      <button class="btn btn--primary btn--round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
+        >
+          <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+        </svg>
+      </button>
       <button class="btn btn--secondary">Download Resume</button>
+      <button class="btn btn--secondary btn--small">Download Resume</button>
       <button class="btn btn--secondary btn--round">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -182,22 +118,8 @@
           <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
         </svg>
       </button>
-      <section id="banner"></section>
-      <section id="about">
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, expedita, similique hic architecto ipsa corporis quo atque porro quos excepturi facere delectus ut sint a vitae eaque incidunt commodi? Itaque.</p>
-        </div>
-        <div class="image1"></div>
-        <div class="image2"></div>
-      </section>
-      <section id="work"></section>
-      <section id="testimonials"></section>
-      <section id="connect"></section>
-      <section id="divider"></section>
-      <section id="services"></section>
-      <section id="blogs"></section>
-      <section id="contact"></section>
     </main>
     <footer></footer>
+    <p class="line-clamp-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam id, ipsam vero eveniet voluptatem deleniti fugiat rem nobis sapiente quisquam doloremque ratione laboriosam modi, porro consequuntur nisi nam? Cupiditate, quo?</p>
   </body>
 </html>

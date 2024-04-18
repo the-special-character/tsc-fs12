@@ -1,0 +1,45 @@
+@layer base {
+    h1 {
+        @apply text-secondary;
+    }
+}
+
+/* @layer base {
+  h1 {
+    @apply text-h4 md:text-h1;
+  }
+
+  a {
+    @apply font-open text-link hover:text-secondary;
+  }
+
+  #about {
+    @apply flex gap-10 max-w-7xl mx-auto flex-wrap;
+  }
+
+  #about > div:nth-child(1) {
+    @apply flex-1 bg-box basis-72;
+  }
+
+  #about > :where(.image1, .image2) {
+    @apply aspect-vrect bg-box w-full md:w-64;
+  }
+}
+@layer components {
+  .btn {
+    @apply px-6 py-4 rounded-full text-button font-inter;
+  }
+  .btn.btn--primary {
+    @apply bg-primary text-white fill-white hover:bg-white hover:text-primary hover:border hover:border-primary hover:fill-primary;
+  }
+
+  .btn.btn--secondary {
+    @apply bg-whiteBackground text-primary fill-primary hover:bg-secondary hover:text-white hover:fill-white font-normal;
+  }
+
+  .btn.btn--round {
+    @apply aspect-square;
+  }
+}
+@layer utilities {
+} */

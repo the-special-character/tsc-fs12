@@ -14,7 +14,7 @@ module.exports = {
     },
     fontSize: {
       h1: [
-        "1.5rem",
+        "2.5rem",
         {
           lineHeight: "2rem",
           letterSpacing: "-0.01em",
