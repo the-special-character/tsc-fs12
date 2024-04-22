@@ -7,50 +7,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./tailwind.js"></script>
     <style type="text/tailwindcss">
-      h1 {
-        @apply text-h1 font-open text-primary;
-      }
+      @layer base {
+        h1 {
+          @apply text-h1 font-open text-primary;
+        }
+        h2 {
+          @apply text-h2 font-open text-primary;
+        }
 
-      h2 {
-      }
+        h3 {
+          @apply text-h3 font-open text-primary;
+        }
 
-      h3 {
-      }
-      h4 {
-      }
-      h5 {
-      }
-      h6 {
-      }
+        h4 {
+          @apply text-h4 font-open text-primary;
+        }
 
-      p {
-      }
+        h5 {
+          @apply text-h5 font-open text-primary;
+        }
 
-      p.small {
-      }
+        h6 {
+          @apply text-h6 font-open text-primary;
+        }
 
-      p.large {
-      }
+        p {
+          @apply text-list font-open text-content;
+        }
 
-      ul > li {
-      }
+        ul > li {
+          @apply text-link font-inter text-primary;
+        }
 
-      ol > li {
-      }
+        ol > li {
+          @apply text-link font-inter text-primary;
+        }
 
-      blockquote {
-      }
+        blockquote {
+          @apply text-quote font-open text-content;
+        }
 
-      button {
-      }
+        button {
+          @apply text-button font-inter text-content;
+        }
 
-      span {
-      }
-
-      label {
-      }
-
-      a {
+        a {
+          @apply font-open text-link hover:text-secondary;
+        }
       }
 
       @layer components {
