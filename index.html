@@ -12,58 +12,66 @@
       }
 
       h2 {
-
       }
 
       h3 {
-
       }
       h4 {
-
       }
       h5 {
-
       }
       h6 {
-
       }
 
       p {
-
       }
 
       p.small {
-
       }
 
       p.large {
-
       }
 
       ul > li {
-
       }
 
-      ol > li {}
+      ol > li {
+      }
 
       blockquote {
-
-      } 
+      }
 
       button {
-
       }
 
       span {
-
       }
 
       label {
-
       }
 
       a {
+      }
 
+      @layer components {
+        .btn {
+          @apply px-6 py-4 rounded-full text-button font-inter;
+        }
+        .btn.btn--primary {
+          @apply bg-primary text-white fill-white hover:bg-white hover:text-primary hover:border hover:border-primary hover:fill-primary;
+        }
+
+        .btn.btn--secondary {
+          @apply bg-whiteBackground text-primary fill-primary hover:bg-secondary hover:text-white hover:fill-white font-normal;
+        }
+
+        .btn.btn--round {
+          @apply aspect-square;
+        }
+
+        .nav {
+          display: flex;
+        }
       }
     </style>
     <!-- <link rel="stylesheet" type="text/tailwindcss" href="./style.css"> -->
@@ -82,17 +90,55 @@
       <h6>Lorem ipsum dolor sit amet.</h6>
       <p>Lorem ipsum dolor sit amet.</p>
       <ul>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc
+          ut sem vitae risus tristique posuere.
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc
+          ut sem vitae risus tristique posuere.
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc
+          ut sem vitae risus tristique posuere.
+        </li>
       </ul>
       <ol>
-        <ul>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</ul>
-        <ul>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</ul>
-        <ul>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</ul>
+        <ul>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc
+          ut sem vitae risus tristique posuere.
+        </ul>
+        <ul>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc
+          ut sem vitae risus tristique posuere.
+        </ul>
+        <ul>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
+          ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc
+          ut sem vitae risus tristique posuere.
+        </ul>
       </ol>
       <blockquote>
-        A successful website does three things: It attracts the right kinds of visitors. Guides them to the main services or product you offer. Collect Contact details for future ongoing relation.
+        A successful website does three things: It attracts the right kinds of
+        visitors. Guides them to the main services or product you offer. Collect
+        Contact details for future ongoing relation.
       </blockquote>
       <button class="btn btn--primary">Download Resume</button>
       <button class="btn btn--primary btn--small">Download Resume</button>
@@ -120,6 +166,11 @@
       </button>
     </main>
     <footer></footer>
-    <p class="line-clamp-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam id, ipsam vero eveniet voluptatem deleniti fugiat rem nobis sapiente quisquam doloremque ratione laboriosam modi, porro consequuntur nisi nam? Cupiditate, quo?</p>
+    <p class="line-clamp-1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam id, ipsam
+      vero eveniet voluptatem deleniti fugiat rem nobis sapiente quisquam
+      doloremque ratione laboriosam modi, porro consequuntur nisi nam?
+      Cupiditate, quo?
+    </p>
   </body>
 </html>
