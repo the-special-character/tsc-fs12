@@ -62,9 +62,9 @@ tailwind.config = {
           },
         ],
         p: [
-          "clamp(1.063rem, 0vw + 1.063rem, 1.063rem)",
+          " clamp(1rem, 0.625vw + 0.875rem, 1.375rem);",
           {
-            lineHeight: "clamp(1.594rem, 0vw + 1.594rem, 1.594rem)",
+            lineHeight: "clamp(1.5rem, 0.938vw + 1.313rem, 2.063rem);",
             fontWeight: "400",
           },
         ],
