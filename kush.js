@@ -163,3 +163,30 @@
 // arr.forEach((element) => {
 //   console.log(element);
 // });
+
+// const array = [1, 2, 3, 4, 5, 7, 6];
+// let isPresent = false;
+// for (let index = 0; index < array.length; index++) {
+//   if (array[index] === 6) {
+//     isPresent = true;
+//     break;
+//   }
+// }
+// console.log(isPresent);
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const index = 5;
+// const data = 11;
+
+// const add = [...arr.slice(0, index),11, ...arr.slice(index)]
+// const updater = [...arr.slice(0, index),11, ...arr.slice(index + 1)]
+// const delete = [...arr.slice(0, index), ...arr.slice(index + 1)]
+// console.log(final);
+// console.log(arr);
+
+
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+// console.log(arr);
+// arr.splice(0, 3, 12); // remove first three elements from array
+// console.log(arr);
