@@ -1079,3 +1079,18 @@ const carts = [
 // }, 0);
 // console.log(total);
 
+
+// find if 3 is available or not with set
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 5];
+
+// const set = new Set(arr);
+// console.log(set);
+
+// const array = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+// const uniqueArray = array.reduce((p, c) => {
+//   if (!p.includes(c)) {
+//     p.push(c);
+//   }
+//   return p;
+// }, []);
+// console.log(uniqueArray);

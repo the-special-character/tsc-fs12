@@ -1,4 +1,22 @@
-const data = [
+// 1.  How do you access the first and last elements of an array?
+// 1.1
+let array = [1, 2, 3, 4, 5];
+
+let firstElement = array.reduce((p, c) => {
+  return p;
+}, array[0]);
+
+let lastElement = array.reduce((p, c) => {
+  return c;
+});
+console.log("First element: " + firstElement);
+console.log("Last element: " + lastElement);
+// 1.2
+let arr = [1, 2, 3, 5, 6];
+console.log(arr[0]);
+console.log(arr[arr.length - 1]);
+
+const products = [
   {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -266,157 +284,67 @@ const data = [
     },
   },
 ];
-const cart = [
-  {
-    id: 1,
-    userId: 1,
-    date: "2020-03-02T00:00:00.000Z",
-    products: [
-      {
-        productId: 1,
-        quantity: 4,
-      },
-      {
-        productId: 2,
-        quantity: 1,
-      },
-      {
-        productId: 3,
-        quantity: 6,
-      },
-    ],
-    __v: 0,
-  },
-  {
-    id: 2,
-    userId: 1,
-    date: "2020-01-02T00:00:00.000Z",
-    products: [
-      {
-        productId: 2,
-        quantity: 4,
-      },
-      {
-        productId: 1,
-        quantity: 10,
-      },
-      {
-        productId: 5,
-        quantity: 2,
-      },
-    ],
-    __v: 0,
-  },
-  {
-    id: 3,
-    userId: 2,
-    date: "2020-03-01T00:00:00.000Z",
-    products: [
-      {
-        productId: 1,
-        quantity: 2,
-      },
-      {
-        productId: 9,
-        quantity: 1,
-      },
-    ],
-    __v: 0,
-  },
-  {
-    id: 4,
-    userId: 3,
-    date: "2020-01-01T00:00:00.000Z",
-    products: [
-      {
-        productId: 1,
-        quantity: 4,
-      },
-    ],
-    __v: 0,
-  },
-  {
-    id: 5,
-    userId: 3,
-    date: "2020-03-01T00:00:00.000Z",
-    products: [
-      {
-        productId: 7,
-        quantity: 1,
-      },
-      {
-        productId: 8,
-        quantity: 1,
-      },
-    ],
-    __v: 0,
-  },
-  {
-    id: 6,
-    userId: 4,
-    date: "2020-03-01T00:00:00.000Z",
-    products: [
-      {
-        productId: 10,
-        quantity: 2,
-      },
-      {
-        productId: 12,
-        quantity: 3,
-      },
-    ],
-    __v: 0,
-  },
-  {
-    id: 7,
-    userId: 8,
-    date: "2020-03-01T00:00:00.000Z",
-    products: [
-      {
-        productId: 18,
-        quantity: 1,
-      },
-    ],
-    __v: 0,
-  },
+//2. write and sort array of products by price
+const sortProductsByPrice = console.log(
+  products.sort((a, b) => a.price - b.price)
+);
+console.log(products.price);
+sortProductsByPrice(products);
+
+//3. Create a function named greetUser that takes two parameters, firstName and lastName. The function should return a greeting message using ES6 template literals.
+function greetUser(firstName, lastName) {
+  return `Hello ${firstName} ${lastName}!`;
+}
+console.log(greetUser("kush", "Vaishnav"));
+
+// 4.Create a function named updateUser that takes two parameters: an object user and a new email string.The function should return a new object with the updated email without modifying the original object.
+
+const user = {
+  name: "darshn",
+  email: "kush@gmail.com",
+};
+const newEmail = "darshan@gmail.com";
+
+function updateUser(user, newEmail) {
+  return { ...user, email: newEmail };
+}
+console.log(updateUser(user, newEmail));
+
+console.log(user);
+
+// 5 Create a function named findUserByName that takes an array of user objects and a name string. The function should return the user object with the matching name. If no user is found, it should return null.
+
+const users = [
+  { name: "Charlie", age: 25 },
+  { name: "Alice", age: 22 },
+  { name: "Bob", age: 24 },
 ];
 
-//for this take 1 record of user
+function findUserByName(users, name) {
+  return users.find((user) => user.name === name) || null;
+}
+console.log(findUserByName(users, "kush"));
 
-// const total = cart.products.reduce((p, c) => {
-//   const product = data.find((x) => x.id === c.productId);
-//   console.log(product.price);
-//   console.log(c);
-//   return p + product.price * c.quantity;
-// }, 0);
+const sortProductByPrice = (products) => {
+  products.sort((a, b) => a.price - b.price);
+  console.log(products.map((product) => product.price));
+};
+sortProductByPrice(products);
 
-// console.log(total);
 
-// for count total quantity buy by each user
-// const newArr = cart.reduce((p, c) => {
-//     const key = c.userId;
-//     if (!p[key]) {
-//         p[key] = { userId: key, total: 0 };
-//     }
-//     p[key].total += c.products.reduce((p, c) => p + c.quantity, 0);
+// find if 3 is available or not with set
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 5];
 
+// const set = new Set(arr);
+// console.log(set);
+
+// const array = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+// const uniqueArray = array.reduce((p, c) => {
+//   if (!p.includes(c)) {
+//     p.push(c);
+//   }
 //   return p;
-// }, {});
-// console.log(newArr);
+// }, []);
+// console.log(uniqueArray); // [1, 2, 3, 4, 5]
 
-// for finding total price for each user
-// const newArr = cart.reduce((p, c) => {
-//     const key = c.userId;
-//     console.log(key);
-//     console.log(p[key]);
 
-//     if (p[key] === undefined) p[key] = 0;
-//         const sum = c.products.reduce((p1, c1) => {
-//             const product = data.find((x) => x.id === c1.productId);
-//             return p1 + product.price * c1.quantity;
-//     }, 0);
-//       p[key] = p[key] + sum;
-
-//   return p;
-// }, {});
-// console.log(newArr);
