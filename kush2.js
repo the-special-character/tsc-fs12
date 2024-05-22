@@ -420,3 +420,45 @@ const cart = [
 //   return p;
 // }, {});
 // console.log(newArr);
+
+// const str = "my name is kush vaishnav";
+// const words = str.split(" ");
+// console.log(words);
+// for (let i = 0; i < words.length; i++) {
+//   words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+// }
+// const result = words.join(" ");
+// console.log(result);
+
+class User {
+  constructor(firstname, lastname, age) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.age = age;
+  }
+  set firstname(value) {
+    this._firstname = User.nameCase(value);
+  }
+  get firstname() {
+    return this._firstname;
+  }
+  set lastname(value) {
+    this.lastname = User.nameCase(value);
+  }
+  get lastname() {
+    return this.lastname;
+  }
+
+  static nameCase = (value) => {
+    return `${value[0].toUpperCase()} ${value.toLowerCase()}`;
+  };
+  getFullName() {
+    return `${this.firstname} ${this.lastname}`;
+  }
+  changeName = (firstname, lastname) => {
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
+  static isEmployee = true;
+  gender = "male";
+}
