@@ -127,6 +127,18 @@
         a {
           @apply font-open text-link hover:text-secondary;
         }
+        #about{
+          @apply flex gap-4;
+         
+        }
+        #about > div:nth-child(1) {
+
+          @apply flex-1 h-72 bg-box basis-72;
+
+        }
+        #about > :where(.img1.img2){
+          @apply aspect-vrect bg-box w-72;
+        }
       }
       @layer components {
         .btn {
@@ -139,7 +151,7 @@
           @apply bg-whiteBackground text-primary  fill-primary hover:fill-white hover:bg-secondary hover:text-white font-normal;
         }
         .btn.btn--round {
-          @apply aspect-square fill-primary hover:fill-white;
+          @apply aspect-square bg-primary fill-white;
         }
         .card {
         }
@@ -171,21 +183,23 @@
           />
         </svg>
       </button>
-      <button class="btn btn--secondary">
+      <button class="btn btn--secondary btn--round">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 -960 960 960"
-          width="24px"
-          fill="#000000"
-        >
+          width="24px">
           <path
             d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
           />
         </svg>
       </button>
       <section id="banner"></section>
-      <section id="about"></section>
+      <section id="about">
+        <div class="content"></div>
+        <div class="img1"></div>
+        <div class="img2"></div>
+      </section>
       <section id="work"></section>
       <section id="testmonials"></section>
       <section id="connect"></section>
