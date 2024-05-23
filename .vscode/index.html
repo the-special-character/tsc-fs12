@@ -132,13 +132,13 @@
         .btn {
           @apply px-6 py-4 rounded-full  text-button font-inter }
         .btn.btn--primary{
-           @apply bg-primary text-white  hover:bg-white hover:text-primary hover:border hover:border-primary font-semibold;
+           @apply bg-primary text-white  hover:bg-white hover:text-primary hover:border hover:border-primary fill-white hover:fill-primary font-semibold;
         }
         .btn.btn--seconary{
-            @apply bg-white text-primary hover:bg-secondary hover:text-white ;
+            @apply bg-whiteBackground text-primary hover:bg-secondary hover:fill-white hover:text-white font-normal fill-primary  ;
         }
-        .btn.round{
-
+        .btn.btn--round{
+          @apply aspect-square fill-primary hover:fill-white;
         }
         .card {
         }
@@ -156,6 +156,11 @@
     <main>
       <button class="btn btn--primary">Download Resume </utton>
       <button class="btn btn--seconary">Download Resume </utton>
+      <button class="btn btn--seconary btn--round">
+        
+          
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>    
+              </button>
 
       <section class="banner"></section>
       <section class="about"></section>
