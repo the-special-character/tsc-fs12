@@ -12,11 +12,12 @@
             primary: "#263238",
             secondary: "#ff8c92",
             box: "#f2f2f2",
-            content: "#f2f2f2",
-            pinkBcakground: "#fdf1fd",
-            whiteBackgrond: "#f2f2f2",
-            primrylightBackground: "#f3eab",
-            lightgrayBackground: "#f2f6f7",
+            content: "#4e4e4e",
+            pinkBackground: "#fdf1fd",
+            whiteBackground: "#f2f2f2",
+            primaryLightBackground: "#f3eaeb",
+            lightGrayBackground: "#f2f6f7",
+            white: "#fff",
           },
           fontFamily: [
             {
@@ -126,13 +127,12 @@
         }
       }
       @layer components {
-        .btm {
-          @apply px-6 py-5 bg
+        .btn {
+          @apply px-6 py-5 bg-primary text-white rounded-full;
         }
         .card {
         }
-        .info{
-
+        .info {
         }
       }
       @layer utilities {
@@ -144,6 +144,8 @@
       <nav></nav>
     </header>
     <main>
+      <button class="btn">red me</button>
+
       <section class="banner"></section>
       <section class="about"></section>
       <section class="work"></section>
