@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          colors: {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: ["./src/**/*.{html,js}"],
+    theme: {
+        colors: {
             primary: "#263238",
             secondary: "#ff8c92",
             box: "#f2f2f2",
@@ -115,46 +109,7 @@
                 },
               ],
             },
-            extend: {},
-          },
-        },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer base {
-        a {
-        }
-      }
-      @layer components {
-        .btm {
-          @apply px-6 py-5 bg
-        }
-        .card {
-        }
-        .info{
-
-        }
-      }
-      @layer utilities {
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav></nav>
-    </header>
-    <main>
-      <section class="banner"></section>
-      <section class="about"></section>
-      <section class="work"></section>
-      <section class="testimonials"></section>
-      <section class="connect"></section>
-      <section class="divider"></section>
-      <section class="servies"></section>
-      <section class="blog"></section>
-      <section class="contect"></section>
-    </main>
-
-    <footer></footer>
-  </body>
-</html>
+      extend: {},
+    },
+    plugins: [],
+  } 
