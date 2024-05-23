@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./**/*.{html,js}"],
+  content: [".//*.{html,js}"],
   theme: {
     colors: {
       primary: "#263238",
@@ -108,8 +108,8 @@ module.exports = {
     },
     extend: {
       aspectRatio: {
-        "hrect": "4 / 3",
-        "vrect": "3 / 4",
+        hrect: "4 / 3",
+        vrect: "3 / 4",
       },
     },
   },
