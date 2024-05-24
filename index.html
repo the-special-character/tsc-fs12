@@ -134,7 +134,7 @@
           @apply flex-1 bg-box basis-72;
         }
         #about :where(.image1, .image2) {
-          @apply aspect-vrect w-72 bg-box;
+          @apply aspect-vrect w-full md:w-64 bg-box;
         }
       }
       @layer components {
@@ -148,7 +148,7 @@
           @apply bg-whiteBackground text-primary  fill-primary hover:fill-white hover:bg-secondary hover:text-white font-normal;
         }
         .btn.btn--round {
-          @apply aspect-square bg-primary fill-white hover:fill-white;
+          @apply aspect-square bg-primary fill-white;
         }
         .card {
         }
@@ -159,7 +159,6 @@
       }
     </style>
   </head>
-KUJCASDCBJKA
   <body>
     <header>
       <nav></nav>
@@ -194,7 +193,14 @@ KUJCASDCBJKA
       </button>
       <section id="banner"></section>
       <section id="about">
-        <div class="content"></div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sed
+            molestiae quam quas, itaque maiores. Omnis sequi blanditiis
+            eligendi. Quos eaque harum quas porro a, animi voluptatibus quasi
+            mollitia velit.
+          </p>
+        </div>
         <div class="image1"></div>
         <div class="image2"></div>
       </section>
