@@ -401,6 +401,9 @@ const cart = [
 // }, []);
 // console.log(updatedProducts);
 
+
+
+
 // fetch("https://fakestoreapi.com/products")
 //   .then((res) => {
 //     return res.json();
@@ -410,3 +413,48 @@ const cart = [
 //   })
 //   .catch((err) => {})
 //   .finally(() => {});
+
+
+
+
+
+// const loadData = async () => {
+//   try {
+//     const tokenRes = await fetch(
+//       "https://yogateria.thespecialcharacter.com/admin/auth/token",
+//       {
+//         method: "POST",
+
+//         body: JSON.stringify({
+//           email: "contact@thespecialcharacter.com",
+//           password: "Password1!",
+//         }),
+//         headers: {
+//           "Content-Type": "application/json",
+//           Accept: "application/json",
+//         },
+//       }
+//     );
+//     const token = await tokenRes.json();
+
+//     if (!tokenRes.ok) throw new Error(token);
+
+//     const customerRes = await fetch(
+//       "https://yogateria.thespecialcharacter.com/admin/customers",
+//       {
+//         headers: {
+//           Authorization: `Bearer ${token.access_token}`,
+//         },
+//       }
+//     );
+//     const customerJSON = await customerRes.json();
+
+//     if (!customerRes.ok) throw new Error(customerJSON);
+
+//     console.log(customerJSON);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
+
+// loadData();
