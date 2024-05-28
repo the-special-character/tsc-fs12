@@ -400,3 +400,13 @@ const cart = [
 //   ];
 // }, []);
 // console.log(updatedProducts);
+
+// fetch("https://fakestoreapi.com/products")
+//   .then((res) => {
+//     return res.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {})
+//   .finally(() => {});
