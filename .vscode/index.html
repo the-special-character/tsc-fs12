@@ -1,163 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="header">
-          <img
-            src="https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/627d5184d536f0805ba6dbfd_Portfolio%20Logo%202.svg"
-            alt="logo"
-          />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="header">
+        <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px"
+                viewBox="0 -960 960 960" width="30px" fill="#111q">
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              </svg></a></li>
           <li><a href="">home</a></li>
           <li><a href="">Services</a></li>
           <li><a href="">Projects</a></li>
           <li><a href="">About Me</a></li>
           <li><a href="">Blog</a></li>
-          <a href=""><button>Contact Me</button></a>
+        </ul>
+        <ul>
+          <li><a href="">My Prot</a></li>
+          <li class="hideOnMobile"><a href="">home</a></li>
+          <li class="hideOnMobile"><a href="">Services</a></li>
+          <li class="hideOnMobile"><a href="">Projects</a></li>
+          <li class="hideOnMobile"><a href="">About Me</a></li>
+          <li class="hideOnMobile"><a href="">Blog</a></li>
+          <li class="menu-btn" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px"
+                viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="banner">
+      <div class="banner-heading">
+        <div class="heading">
+          <h1>Digital Designer</h1>
         </div>
-      </nav>
-    </header>
-    <main>
-      <section id="banner">
-        <div class="banner-heading">
-          <div class="heading"><h1>Digital Designer</h1></div>
-          <div class="heading"><h1>crafting products</h1></div>
-          <div class="heading"><h1>that people love</h1></div>
+        <div class="heading">
+          <h1>crafting products</h1>
         </div>
-        <div class="banner-img"></div>
-      </section>
-      <section id="carosel">
-        <div class="caro"></div>
-      </section>
-      <section id="services">
-        <div class="services-text">
-          <h2>Look at my services</h2>
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
-            fugit.
-          </h3>
+        <div class="heading">
+          <h1>that people love</h1>
         </div>
-        <div class="services-box">
-          <div class="box">
-            <h3>Website Design</h3>
-            <h4>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              perferendis eos minus officiis repellat ipsa et amet voluptas
-              eveniet sequi.
-            </h4>
-          </div>
-          <div class="box">
-            <h3>SEO Marketing</h3>
-            <h4>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              perferendis eos minus officiis repellat ipsa et amet voluptas
-              eveniet sequi.
-            </h4>
-          </div>
-          <div class="box">
-            <h3>WF Development</h3>
-            <h4>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              perferendis eos minus officiis repellat ipsa et amet voluptas
-              eveniet sequi.
-            </h4>
-          </div>
+      </div>
+      <div class="banner-img"></div>
+    </section>
+    <section id="carosel">
+      <div class="caro"></div>
+    </section>
+    <section id="services">
+      <div class="services-text">
+        <h2>Look at my services</h2>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+          fugit.
+        </h3>
+      </div>
+      <div class="services-box">
+        <div class="box">
+          <h3>Website Design</h3>
+          <h4>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            perferendis eos minus officiis repellat ipsa et amet voluptas
+            eveniet sequi.
+          </h4>
         </div>
-      </section>
-      <section id="projects">
-        <div class="project-text">
-          <h2>Selected Projects</h2>
-          <h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            repellendus odio laboriosam corrupti commodi nemo reprehenderit
-            dolore, cum labore deserunt sit voluptatibus aspernatur porro dicta
-            perspiciatis nulla ipsa accusamus repellat!
-          </h3>
+        <div class="box">
+          <h3>SEO Marketing</h3>
+          <h4>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            perferendis eos minus officiis repellat ipsa et amet voluptas
+            eveniet sequi.
+          </h4>
         </div>
-        <div class="project-card">
-          <div class="project-card-info"></div>
-          <div class="project-card-info"></div>
-          <div class="project-card-info"></div>
-          <div class="project-card-info"></div>
+        <div class="box">
+          <h3>WF Development</h3>
+          <h4>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            perferendis eos minus officiis repellat ipsa et amet voluptas
+            eveniet sequi.
+          </h4>
         </div>
-      </section>
-      <section id="work">
-        <div class="work-section">
-          <div class="work-left">
-            <div>
-              <h2>My process that</h2>
-            </div>
-            <div>
-              <h2>help my client to</h2>
-            </div>
-            <div>
-              <h2>2x their revnue</h2>
-            </div>
-            <div>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat blanditiis laborum corrupti laboriosam?
-              </p>
-            </div>
-            <div><button>book a free call</button></div>
-          </div>
-          <div class="work-right">
-            <div class="work-card"></div>
-            <div class="work-card"></div>
-            <div class="work-card"></div>
-            <div class="work-card"></div>
-          </div>
-        </div>
-      </section>
-      <section id="about">
-        <div class="about-dit">
+      </div>
+    </section>
+    <section id="projects">
+      <div class="project-text">
+        <h2>Selected Projects</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
+          repellendus odio laboriosam corrupti commodi nemo reprehenderit
+          dolore, cum labore deserunt sit voluptatibus aspernatur porro dicta
+          perspiciatis nulla ipsa accusamus repellat!
+        </p>
+      </div>
+      <div class="project-card">
+        <div class="project-card-info"></div>
+        <div class="project-card-info"></div>
+        <div class="project-card-info"></div>
+        <div class="project-card-info"></div>
+      </div>
+    </section>
+    <section id="work">
+      <div class="work-section">
+        <div class="work-section-left">
           <div>
-            <h3>
-              KIERAN <br />
-              PARKER
-            </h3>
+            <h2>My process that</h2>
           </div>
           <div>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique culpa ratione in praesentium obcaecati cupiditate
-                omnis. Iure autem aspernatur cupiditate ut cumque quis adipisci
-                esse.
-              </p>
-            </div>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                dignissimos iure natus, tenetur deserunt beatae magni pariatur
-                perferendis facilis enim.
-              </p>
-            </div>
-            <div>
-              <h3>15+</h3>
-              <h4>project Done</h4>
-            </div>
-            <div>
-                <h3>07</h3>
-                <h4>Years of Exprerience</h4>
-            </div>
-            <div>
-                <h3>20M</h3>
-                <h4>Total Funding</h4>
-            </div>
+            <h2>help my clients to</h2>
+          </div>
+          <div>
+            <h2>2x their revnue</h2>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              laudantium laborum totam atque, porro molestiae quo accusantium
+              quasi voluptate minus.
+            </p>
+          </div>
+          <div><button>Book a FREE Call</button></div>
+        </div>
+        <div class="work-section-right">
+          <div class="work-section-right-parts"></div>
+          <div class="work-section-right-parts"></div>
+          <div class="work-section-right-parts"></div>
+          <div class="work-section-right-parts"></div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="about-details">
+        <div>
+          <h3>KIERAN <br> PARKER</h3>
+        </div>
+        <div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              quisquam odit, similique possimus provident itaque sunt corporis
+              molestias commodi porro delectus consectetur dolor ut numquam
+              placeat ex, nostrum quibusdam soluta!
+            </p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Architecto, sed optio dolorem corporis possimus accusamus nam
+              quia, modi placeat eaque eligendi magnam! Optio quos architecto
+              fugit sapiente, earum laudantium facere.
+            </p>
+          </div>
+          <div>
+            <h3>15+</h3>
+            <h4>Projects Done</h4>
+          </div>
+          <div>
+            <h3>07/h3>
+              <h4>Years of Experience</h4>
+          </div>
+          <div>
+            <h3>20M</h3>
+            <h4>Total Funding</h4>
           </div>
         </div>
-      </section>
-      <section id="testmonials"></section>
-      <section id="blog"></section>
-      <section id="contact"></section>
-    </main>
-  </body>
+      </div>
+    </section>
+    <section id="testmonials"></section>
+    <section id="blog"></section>
+    <section id="contact"></section>
+  </main>
+
+  <script>
+    function showSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'none'
+    }
+  </script>
+</body>
 </html>
