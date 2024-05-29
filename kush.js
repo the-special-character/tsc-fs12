@@ -1137,3 +1137,113 @@ const carts = [
 // };
 
 // loadData();
+
+
+// const p1 =() =>{
+//   return new Promise((resolve, reject) => {
+      
+
+//       //server call
+//      // reject("p1 rejected")
+//      // resolve("p1 resolve")
+        
+//   })
+// }
+
+// // display loader
+
+// p1()
+//   .then((res)=>{
+//           console.log(res);
+//           //diplay data 
+
+//    })
+
+// .catch((err)=>{
+//   console.log(err);
+//   //display error
+// })`
+
+// .finally(()=>{
+// console.log("finally");
+// })
+
+
+
+
+
+
+// fetch("https://yogateria.thespecialcharacter.com/admin/auth/token",
+//   {
+//     method: "POST",
+//     body: JSON.stringify({
+//       email: "contact@thespecialcharacter.com",
+//       password: "Password1!",
+//     }),
+//     headers: {
+//       "Content-Type": "application/json; charset=utf-8",
+//       Accept: "application/json",
+//     },
+//   })
+//  .then(res =>{
+//     return res.json()
+//  })
+//  .then(data => {
+//     console.log(data);
+
+//     fetch("https://yogateria.thespecialcharacter.com/admin/customers")
+//         .then(res =>{
+//             if(res.ok) return res.json();
+//             throw new error ("Api faild")
+//         })
+//         .then(data =>{
+            
+//         })
+//         .catch(err =>{
+//             console.log(err);
+//         })
+//  })
+
+// const p1 =() =>{
+//     return new Promise((resolve, reject) => {
+
+//         //server call
+//        // reject("p1 rejected")
+//        // resolve("p1 resolve")
+
+//     })
+// }
+
+// // display loader
+
+// p1()
+//     .then((res)=>{
+//             console.log(res);
+//             //diplay data
+
+//      })
+
+// .catch((err)=>{
+//     console.log(err);
+//     //display error
+// })
+
+// .finally(()=>{
+// console.log("finally");
+// })
+
+// fetch("https://fakestoreapi.com/products")
+// .then(res =>{
+//     return res.json()
+// })
+// .then(data =>{
+//     console.log(data);
+// })
+// .catch(err =>{
+
+// })
+
+// .finally(()=>{
+
+// })
+

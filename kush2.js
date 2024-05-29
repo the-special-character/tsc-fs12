@@ -422,7 +422,6 @@ const cart = [
 // }, {});
 // console.log(newArr);
 
-<<<<<<< HEAD
 
 
 // const products = [
@@ -1269,7 +1268,6 @@ const cart = [
 
 // console.log(updatedProducts);
 
-=======
 // const str = "my name is kush vaishnav";
 // const words = str.split(" ");
 // console.log(words);
@@ -1311,4 +1309,3 @@ class User {
   static isEmployee = true;
   gender = "male";
 }
->>>>>>> cf3966d8124078a9b64227c7db9dbb1f69863281
