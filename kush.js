@@ -1291,3 +1291,53 @@ const carts = [
 // };
 
 // loadData();
+
+
+
+
+//promise of any  nd race
+
+// const p1 = () => {
+//   return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//           resolve("p1 resolved")
+//           //reject("p1 reject")
+//       }, 5000)
+//   })
+
+// }
+// const p2 = () => {
+//   return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//           resolve("p2 resolved")
+//       }, 4000)
+//   })
+
+// }
+// const p3 = () => {
+//   return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//           resolve("p3 resolved")
+//       }, 4000)
+//   })
+
+// }
+// const data =  async () => {
+//   try {
+//       console.time ("Promise")
+//       const res  = await Promise.race([
+//       const res  = await Promise.any([
+//           p1(),
+//           p2(),
+//           p3()
+//       ])
+      
+//       console.log(res);
+//       console.timeEnd ("Promise")
+//   } catch (error) {
+      
+//   }
+// }
+
+
+// data();
