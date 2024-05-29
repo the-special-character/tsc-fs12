@@ -5,125 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          colors: {
-            primary: "#263238",
-            secondary: "#ff8c92",
-            box: "#f2f2f2",
-            content: "#4e4e4e",
-            pinkBackground: "#fdf1fd",
-            whiteBackground: "#f2f2f2",
-            primaryLightBackground: "#f3eaeb",
-            lightGrayBackground: "#f2f6f7",
-            white: "#fff",
-          },
-          fontSize: {
-            h1: [
-              "2.5rem",
-              {
-                lineHeight: "2rem",
-                letterSpacing: "-0.01em",
-                fontWeight: "500",
-              },
-            ],
-            h2: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h3: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h4: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h5: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            h6: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            body: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            list: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            link: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            quote: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-            button: [
-              "1.875rem",
-              {
-                lineHeight: "2.25rem",
-                letterSpacing: "-0.02em",
-                fontWeight: "700",
-              },
-            ],
-          },
-          fontFamily: {
-            open: ["Open Sans", "sans-serif"],
-            inter: ["Inter", "sans-serif"],
-          },
-          extend: {
-            aspectRatio: {
-              hrect: "4 / 3",
-              vrect: "3 / 4",
-            },
-          },
-        },
-      };
-    </script>
-    <style type="text/tailwindcss">
+    <script src="./tailwind.js"></script>
+    
+    <style type="text/tailwindcss" src>
       @layer base {
+        h1{
+          
+        }
         a {
           @apply font-open text-link hover:text-secondary;
         }
@@ -150,10 +38,6 @@
         .btn.btn--round {
           @apply aspect-square bg-primary fill-white;
         }
-        .card {
-        }
-        .info {
-        }
       }
       @layer utilities {
       }
@@ -164,6 +48,7 @@
       <nav></nav>
     </header>
     <main>
+      <h1 class="text-h1"></h1>
       <a href="">kush</a>
       <button class="btn btn--primary">Hire Me</button>
       <button class="btn btn--secondary">Download Resume</button>

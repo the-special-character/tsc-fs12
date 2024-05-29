@@ -382,6 +382,7 @@ const cart = [
 ];
 
 // const updatedProducts = products.reduce((p, c) => {
+  
 //   const totalPurchase = cart.reduce((p1, c1) => {
 //     const product = c1.products.find((x) => x.productId === c.id);
 //     if (product) {
@@ -418,43 +419,43 @@ const cart = [
 
 
 
-// const loadData = async () => {
-//   try {
-//     const tokenRes = await fetch(
-//       "https://yogateria.thespecialcharacter.com/admin/auth/token",
-//       {
-//         method: "POST",
+const loadData = async () => {
+  try {
+    const tokenRes = await fetch(
+      "https://yogateria.thespecialcharacter.com/admin/auth/token",
+      {
+        method: "POST",
 
-//         body: JSON.stringify({
-//           email: "contact@thespecialcharacter.com",
-//           password: "Password1!",
-//         }),
-//         headers: {
-//           "Content-Type": "application/json",
-//           Accept: "application/json",
-//         },
-//       }
-//     );
-//     const token = await tokenRes.json();
+        body: JSON.stringify({
+          email: "contact@thespecialcharacter.com",
+          password: "Password1!",
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+    const token = await tokenRes.json();
 
-//     if (!tokenRes.ok) throw new Error(token);
+    if (!tokenRes.ok) throw new Error(token);
 
-//     const customerRes = await fetch(
-//       "https://yogateria.thespecialcharacter.com/admin/customers",
-//       {
-//         headers: {
-//           Authorization: `Bearer ${token.access_token}`,
-//         },
-//       }
-//     );
-//     const customerJSON = await customerRes.json();
+    const customerRes = await fetch(
+      "https://yogateria.thespecialcharacter.com/admin/customers",
+      {
+        headers: {
+          Authorization: `Bearer ${token.access_token}`,
+        },
+      }
+    );
+    const customerJSON = await customerRes.json();
 
-//     if (!customerRes.ok) throw new Error(customerJSON);
+    if (!customerRes.ok) throw new Error(customerJSON);
 
-//     console.log(customerJSON);
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
+    console.log(customerJSON);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
-// loadData();
+loadData();
