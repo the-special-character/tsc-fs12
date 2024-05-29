@@ -1,37 +1,64 @@
+body {
+    background-color: black;
+    color: white;
+  }
+  /* #banner {
+    display: flex;
+    flex: 1;
+  } */
+  .banner-heading {
+  }
+  .banner-img {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+  }
+  .caro {
+    background-color: #fff;
+    height: 200px;
+  }
+  .services-box {
+    /* display: flex;
+    gap: 10px;
+    flex: 1; */
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    background-color: red;
+    height: 50vh;
+    width: 100vw;
+    padding: 10px;
+    border-top: 5px solid rgb(18, 122, 115);
+    margin-bottom: 10px;
+  }
+  .project-text {
+    text-align: center;
+  }
+  .project-card {
+    /* display: flex; */
+    /* gap: 10px; */
+    text-align: center;
+  }
+  .project-card-info {
+    height: 300px;
+    width: 100vw;
+    background-color: red;
+    margin-bottom: 10px;
+  }
 
 
+  .work-left{
+    height: 500px;
+    width: 100vw;
+    background-color: hsl(124, 46%, 57%);
+  }
+  .work-right{
+    height: 450px;
+    width: 100vw;
+    background-color: rgb(200, 194, 194);
+    margin-bottom: 10px;
+  }
 
-@layer base {
-    a {
-      @apply font-open text-link hover:text-secondary;
-    }
-    #about {
-      @apply flex gap-10 max-w-7xl mx-auto flex-wrap;
-    }
-    #about > div:nth-child(1) {
-      @apply flex-1 bg-box basis-72;
-    }
-    #about :where(.image1, .image2) {
-      @apply aspect-vrect w-72 bg-box w-full md:w-64;
-    }
-  }
-  @layer components {
-    .btn {
-      @apply px-6 py-4 rounded-full text-button font-inter;
-    }
-    .btn.btn--primary {
-      @apply bg-primary text-white fill-white hover:fill-primary hover:bg-white hover:text-primary hover:border hover:border-primary;
-    }
-    .btn.btn--secondary {
-      @apply bg-whiteBackground text-primary  fill-primary hover:fill-white hover:bg-secondary hover:text-white font-normal;
-    }
-    .btn.btn--round {
-      @apply aspect-square bg-primary fill-white hover:fill-white;
-    }
-    .card {
-    }
-    .info {
-    }
-  }
-  @layer utilities {
-  }
+  

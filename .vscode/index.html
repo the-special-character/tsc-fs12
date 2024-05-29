@@ -3,57 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css ">
-     <script src="./tailwind.config.js"></script>
-  
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <header>
-      <nav></nav>
+      <nav>
+        <div class="header">
+          <img
+            src="https://uploads-ssl.webflow.com/61f03747d8d407ed117df27f/627d5184d536f0805ba6dbfd_Portfolio%20Logo%202.svg"
+            alt="logo"
+          />
+          <a href="">home</a>
+          <a href="">Services</a>
+          <a href="">Projects</a>
+          <a href="">About Me</a>
+          <a href="">Blog</a>
+          <a href=""><button>Contact Me</button></a>
+        </div>
+      </nav>
     </header>
     <main>
-      <!-- <a href="">darshan</a> -->
-      <button class="btn btn--primary">Hire Me</button>
-      <button class="btn btn--secondary">Download Resume</button>
-      <button class="btn btn--secondary btn--round">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-        >
-          <path
-            d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
-          />
-        </svg>
-      </button>
-      <button class="btn btn--secondary btn--round">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-        >
-          <path
-            d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
-          />
-        </svg>
-      </button>
-      <section id="banner"></section>
-      <section id="about">
-        <div class="content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus qui est consequatur totam voluptatibus rem, magni repellat vero quod quibusdam.</div>
-        <div class="image1"></div>
-        <div class="image2"></div>
+      <section id="banner">
+        <div class="banner-heading">
+          <div class="heading"><h1>Digital Designer</h1></div>
+          <div class="heading"><h1>crafting products</h1></div>
+          <div class="heading"><h1>that people love</h1></div>
+        </div>
+        <div class="banner-img"></div>
       </section>
-      <section id="work"></section>
+      <section id="carosel">
+        <div class="caro"></div>
+      </section>
+      <section id="services">
+        <div class="services-text">
+          <h2>Look at my services</h2>
+          <h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+            fugit.
+          </h3>
+        </div>
+        <div class="services-box">
+          <div class="box">
+            <h3>Website Design</h3>
+            <h4>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              perferendis eos minus officiis repellat ipsa et amet voluptas
+              eveniet sequi.
+            </h4>
+          </div>
+          <div class="box">
+            <h3>SEO Marketing</h3>
+            <h4>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              perferendis eos minus officiis repellat ipsa et amet voluptas
+              eveniet sequi.
+            </h4>
+          </div>
+          <div class="box">
+            <h3>WF Development</h3>
+            <h4>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              perferendis eos minus officiis repellat ipsa et amet voluptas
+              eveniet sequi.
+            </h4>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <div class="project-text">
+          <h2>Selected Projects</h2>
+          <h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
+            repellendus odio laboriosam corrupti commodi nemo reprehenderit
+            dolore, cum labore deserunt sit voluptatibus aspernatur porro dicta
+            perspiciatis nulla ipsa accusamus repellat!
+          </h3>
+        </div>
+        <div class="project-card">
+          <div class="project-card-info"></div>
+          <div class="project-card-info"></div>
+          <div class="project-card-info"></div>
+          <div class="project-card-info"></div>
+        </div>
+      </section>
+      <section id="work">
+        <div class="work-section">
+          <div class="work-left">
+            <div>
+              <h2>My process that</h2>
+            </div>
+            <div>
+              <h2>help my client to</h2>
+            </div>
+            <div>
+              <h2>2x their revnue</h2>
+            </div>
+            <div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat blanditiis laborum corrupti laboriosam?
+              </p>
+            </div>
+            <div><button>book a free call</button></div>
+          </div>
+          <div class="work-right">
+            <div class="work-card"></div>
+            <div class="work-card"></div>
+            <div class="work-card"></div>
+            <div class="work-card"></div>
+          </div>
+        </div>
+      </section>
+      <section id="about"></section>
       <section id="testmonials"></section>
-      <section id="connect"></section>
-      <section id="divider"></section>
-      <section id="services"></section>
-      <section id="blogs"></section>
+      <section id="blog"></section>
       <section id="contact"></section>
     </main>
   </body>
