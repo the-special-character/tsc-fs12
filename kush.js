@@ -1291,3 +1291,6 @@ const carts = [
 // };
 
 // loadData();
+
+
+kush is samrt 
