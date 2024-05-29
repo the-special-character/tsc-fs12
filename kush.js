@@ -1099,6 +1099,9 @@ const carts = [
 
 
 // api data from the server 
+
+
+
 // const loadData = async () => {
 //   try {
 //       const tokenRes = await fetch("https://yogateria.thespecialcharacter.com/admin/auth/token", {
@@ -1247,3 +1250,44 @@ const carts = [
 
 // })
 
+
+//Promise
+
+// const loadData = async () => {
+//     try {
+//       const res = await Promise.allSettled([
+//         fetch("https://fakestoreapi.com/products"),
+//         fetch("https://fakestoreapi.com/carts"),
+//       ]);
+//       const json = await Promise.allSettled(
+//         res.map((x) =>
+//           x.status === "fulfilled" ? x.value.json() : x.reason.json()
+//         )
+//       );
+//       console.log(json[0]);
+//       console.log(json[1]);
+//     } catch (error) {}
+//   };
+//   loadData();
+
+
+
+// const loadData = async ()=>{
+//     try {
+//               const res = await Promise.all([
+//         fetch("https://fakestoreapi.com/products"),
+//         fetch("https://fakestoreapi.com/carts"),
+//       ]);
+
+
+
+//       const json = await Promise.all(res.map(x => x.json ()))
+
+
+//       console.log(json[0]);
+//       console.log(json[1]);
+
+//     } catch (error) {}
+// };
+
+// loadData();
