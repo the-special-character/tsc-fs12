@@ -1291,7 +1291,3 @@ const carts = [
 // };
 
 // loadData();
-
-
-
-darshan
