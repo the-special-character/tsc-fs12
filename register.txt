@@ -1,3 +1,0 @@
-hello register
-
-hello merge test 1
