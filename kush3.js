@@ -453,19 +453,66 @@ const cart = [
 
 // loadData();
 
-const loadData = async () => {
-  try {
-    const res = await Promise.all([
-      fetch("https://fakestoreapi.com/products"),
-      fetch("https://fakestoreapi.com/carts"),
-    ]);
-    const json = await Promise.all(
-      res.map((x) =>
-        x.status === "fulfilled" ? x.value.json() : x.reason.json()
-      )
-    );
-    console.log(json[0]);
-    console.log(json[1]);
-  } catch (error) {}
+// const loadData = async () => {
+//   try {
+//     const res = await Promise.allSettled([
+//       fetch("https://fakestoreapi.com/products"),
+//       fetch("https://fakestoreapi.com/carts"),
+//     ]);
+//     // const json = await Promise.all(res.map((x) => x.json()));
+//     const json = await Promise.all(
+//       res.map((x) => {
+//         if (x.status === "fulfilled") {
+//           return x.value.json();
+//         }
+//         if (x.status === "rejected") {
+//           return x.reason.json;
+//         }
+//       })
+//     );
+//     const products = json[0];
+//     const cart = json[1];
+//     // for finding total price for each user
+//     const newArr = cart.reduce((p, c) => {
+//       const key = c.userId;
+
+//       if (p[key] === undefined) p[key] = 0;
+//       const sum = c.products.reduce((p1, c1) => {
+//         const product = products.find((x) => x.id === c1.productId);
+//         return p1 + product.price * c1.quantity;
+//       }, 0);
+//       p[key] = p[key] + sum;
+
+//       return p;
+//     }, {});
+//     console.log(newArr);
+//   } catch (error) {}
+// };
+// loadData(); 
+
+// function fn() {
+//   return 1;
+//   return 2;
+// }
+// console.log(fn());
+
+
+const posturl = "https://jsonplaceholder.typicode.com/todos/1";
+const postdata = {
+  title: "darshan",
+  email: "chotaliyadarshan710@gmail.com",
 };
-loadData();
+(postapi = fetch(posturl)),
+  {
+    method: "POST",
+    headers: { "Content-Type": "appliction/json" },
+    body: JSON.stringify(postdata),
+  };
+postapi
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
