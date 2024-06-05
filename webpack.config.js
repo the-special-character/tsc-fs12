@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./index.js",
+  entry: "./src",
   plugins: [
     new HtmlWebpackPlugin({
       title: "yagnesh modh",
@@ -23,9 +23,9 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },

@@ -1,6 +1,6 @@
 const add = require("./app");
-require("./style.scss");
-require("./app.scss");
+require("./style.css");
+require("./app.css");
 
 const a = 1;
 const b = 2;
