@@ -1,10 +1,16 @@
-const add = require("./app");
-require("./style.css");
-require("./app.css");
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./style.css";
 
-const a = 1;
-const b = 2;
+// Clear the existing HTML content
+document.body.innerHTML = '<div id="app"></div>';
 
-const ans = add(a, b);
-
-console.log(ans);
+// Render your React component instead
+const root = createRoot(document.getElementById("app"));
+root.render(
+  <div className="wrapper">
+    <div className="box"></div>
+    <div className="box"></div>
+    <div className="box"></div>
+  </div>
+);

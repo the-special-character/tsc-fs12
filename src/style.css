@@ -3,7 +3,16 @@
 @tailwind utilities;
 
 @layer components {
-  .heading {
-    @apply text-red-500;
+  /* .wrapper > .box {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  } */
+
+  .wrapper {
+    @apply flex gap-2;
+    .box {
+      @apply h-24 w-24 bg-red-400;
+    }
   }
 }
