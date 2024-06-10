@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  /* .wrapper > .box {
-    height: 100px;
-    width: 100px;
-    background-color: red;
-  } */
-
   .wrapper {
     @apply flex gap-2;
     .box {
