@@ -1,36 +1,39 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  entry: "./index.js",
+  entry: "./src",
   plugins: [
     new HtmlWebpackPlugin({
       title: "kush vaishnav",
       template: "./public/index.html",
       filename: "index.html",
     }),
+    new MiniCssExtractPlugin(),
   ],
+
   output: {
     path: path.resolve(__dirname, "output"),
     filename: "main.js",
   },
   mode: "development",
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()],
+  },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
-        },
+        use: ["babel-loader"],
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      }
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
     ],
   },
 };
