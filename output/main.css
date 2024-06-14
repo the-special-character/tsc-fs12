@@ -505,8 +505,21 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
-.wrapper > .box{
+/* .wrapper > .box{
         height: 100px;
         width: 100px;
         background-color:red;
-    }
+        margin-bottom: 10px;
+    } */
+.wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+.wrapper .box {
+  height: 6rem;
+  width: 6rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}
+
