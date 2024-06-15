@@ -25,10 +25,13 @@ module.exports = {
       new CssMinimizerPlugin(),
     ],
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".json"],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
