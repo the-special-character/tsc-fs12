@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  entry: "./src",
+  entry: "./src/index.jsx",
   plugins: [
     new HtmlWebpackPlugin({
       title: "kush vaishnav",
@@ -22,10 +22,13 @@ module.exports = {
   optimization: {
     minimizer: [new CssMinimizerPlugin()],
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".json"],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
@@ -35,8 +38,5 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
     ],
-  },
-  resolve: {
-    extensions: [".js", ".json", ".wasm"],
   },
 };

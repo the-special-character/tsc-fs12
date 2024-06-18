@@ -511,15 +511,13 @@ video {
         background-color:red;
         margin-bottom: 10px;
     } */
-.wrapper {
+.flex {
   display: flex;
-  gap: 0.5rem;
 }
-.wrapper .box {
-  height: 6rem;
-  width: 6rem;
-  --tw-bg-opacity: 1;
-  background-color: rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+.flex-col {
+  flex-direction: column;
+}
+.gap-4 {
+  gap: 1rem;
 }
 

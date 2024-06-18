@@ -12,7 +12,7 @@
   .wrapper {
     @apply flex gap-2;
     .box {
-      @apply h-24 w-24 bg-black;
+      @apply h-24 w-24 bg-pink-500;
     }
   }
 }
