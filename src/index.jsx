@@ -1,8 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
-import Textinput from "./componemts/textinput";
-import Test from "./componemts/test";
 import ToDo from "./Todo";
 
 // Clear the existing HTML content
@@ -15,6 +13,4 @@ const App = ({ id, label, placeholder }) => {
 
 };
 
-root.render(
-  <ToDo />
-);
+root.render(<ToDo />); 
