@@ -13,6 +13,9 @@ const test = "hello";
 
 LifeCyle.getDerivedStateFromProps = (props, state) => {
   console.log("getDerivedStateFromProps Life Cycle");
+
+  console.log(props, state);
+
   return {
     name: `Mr. ${props.name}`,
     test,
@@ -23,11 +26,22 @@ export default class App extends Component {
   state = {
     name: "rohit",
   };
+
+  static getDerivedStateFromError(error) {
+    return {
+      error,
+    };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.log(errorInfo.componentStack);
+  }
+
   render() {
-    const { name } = this.state;
+    const { name, error } = this.state;
     return (
       <div>
-        <LifeCyle name={name} />
+        {error ? <p>{error.message}</p> : <LifeCyle name={name} />}
         <button
           type="button"
           onClick={() => {
