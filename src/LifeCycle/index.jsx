@@ -9,9 +9,11 @@ import Child2 from '../componemts/child2';
 //  -> componentDidMount
 
 // Updating
+//  -> getDerivedStateFromProps
 //  -> shouldComponentUpdate
-//  -> 
-//  -> 
+//  -> render
+//  -> getSnapshotBeforeUpdate
+//  -> componemtDidUpdate
 
 // Unmounting
 
@@ -41,20 +43,30 @@ export default class LifeCycle extends Component {
         // console.log("componentDidMount Life Cycle");
         try {
             const res = await fetch("https://fakestoreapi.com/products/")
-            const json = await res.json()
-            console.log(json);
+            // const json = await res.json()
+            // console.log(json);
             this.setState({ data: json })
         } catch (error) { }
 
         // console.log("componentDidMount Life Cycle");
         // console.log(document.getElementById("container"));
         // document.getElementById("container").style.color = "blue";
+        this.container.style.color = "blue";
+    }
+
+    getSnapshotBeforeUpdate = (prevProps, prevState) => { }
+
+    componentDidUpdate(prevProps, prevState) {
+        // console.log("componentDidUpdate Life Cycle");
+        console.log(this.state);
     }
 
     render() {
         const { name, data, count, number } = this.state
         // console.log("Render Life Cycle");
-        return <div id='container'>
+        return <div id='container' ref={(ref) => {
+            this.container = ref;
+        }}>
             <p>{name}</p>
             <h1>{count}</h1>
             <h2>{number}</h2>
@@ -73,7 +85,7 @@ export default class LifeCycle extends Component {
             <Child1 />
             <Child2 count={count} />
 
-            {data && (
+            {/* {data && (
                 <div>
                     <table className='border-collapse'>
                         <thead className='bg-blue-300'>
@@ -100,7 +112,7 @@ export default class LifeCycle extends Component {
                         </tbody>
                     </table>
                 </div>
-            )}
+            )} */}
         </div>
     }
 }       

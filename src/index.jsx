@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import LifeCycle from "./LifeCycle";
-
+      
 // Clear the existing HTML content
 document.body.innerHTML = '<div id="app"></div>';
 
