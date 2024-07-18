@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import Child1 from '../componemts/child1';
 import Child2 from '../componemts/child2';
 
@@ -6,18 +6,21 @@ import Child2 from '../componemts/child2';
 //  -> Constructor
 //  -> getDerivedStateFromProps = static method
 //  -> render
-//  -> componentDidMount
+//  -> componentDidMount = add data while loading the page first
 
 // Updating
 //  -> getDerivedStateFromProps
-//  -> shouldComponentUpdate
+//  -> shouldComponentUpdate = performance improve
 //  -> render
 //  -> getSnapshotBeforeUpdate
 //  -> componemtDidUpdate
 
 // Unmounting
+//  -> componentWillUnmount = performance improve
 
 // Error Handling
+//  -> getDerivedStateFromError
+//  -> componentDidCatch
 
 let fname = "Kush";
 
@@ -37,6 +40,7 @@ export default class LifeCycle extends Component {
 
         // console.log("Constructor Life Cycle");
         // console.log(document.getElementById("container"));
+        this.container = createRef();
     }
 
     async componentDidMount() {
@@ -44,40 +48,48 @@ export default class LifeCycle extends Component {
         try {
             const res = await fetch("https://fakestoreapi.com/products/")
             // const json = await res.json()
-            // console.log(json);
+            //  .log(json);
             this.setState({ data: json })
         } catch (error) { }
 
         // console.log("componentDidMount Life Cycle");
         // console.log(document.getElementById("container"));
         // document.getElementById("container").style.color = "blue";
-        this.container.style.color = "blue";
+        this.container.current.style.color = "blue";
     }
 
-    getSnapshotBeforeUpdate = (prevProps, prevState) => { }
+    getSnapshotBeforeUpdate = (prevProps, prevState) => { 
+        return 10;
+    }
 
-    componentDidUpdate(prevProps, prevState) {
-        // console.log("componentDidUpdate Life Cycle");
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        // console.log("componentDidUpdate Life Cycle");  
         console.log(this.state);
+        console.log(snapshot);
     }
 
     render() {
         const { name, data, count, number } = this.state
         // console.log("Render Life Cycle");
-        return <div id='container' ref={(ref) => {
-            this.container = ref;
-        }}>
-            <p>{name}</p>
+        return <div id='container'
+            ref={this.container}>
+            {count > 5 && < p > {name}</p>
+            }
             <h1>{count}</h1>
             <h2>{number}</h2>
             <h3>{fname}</h3>
             <button onClick={
                 () => {
-                    fname: "Virat";
-                    this.setState({
-                        count: 5,
-                        number: 10,
+                    this.setState(({ count, number }) => {
+                        return {
+                            count: count + 1,
+                            number: number + 1,
+                        }
                     })
+                    // this.setState({
+                    //     count: 5,
+                    //     number: 10,
+                    // })
                 }
             }>
                 Click Me!!
@@ -113,6 +125,6 @@ export default class LifeCycle extends Component {
                     </table>
                 </div>
             )} */}
-        </div>
+        </div >
     }
 }       

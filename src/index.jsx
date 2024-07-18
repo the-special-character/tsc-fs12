@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import LifeCycle from "./LifeCycle";
-      
+
 // Clear the existing HTML content
 document.body.innerHTML = '<div id="app"></div>';
 
@@ -24,10 +24,21 @@ export default class App extends Component {
     state = {
         name: "Kush R Vaishnav",
     }
+
+    static getDerivedStateFromError(error) {
+        return {
+            error,
+        }
+    }
+    componentDidCatch(error, errorinfo) {
+        console.log(errorinfo.componentStack);
+
+    }
+
     render() {
-        const { name } = this.state;
+        const { name, error } = this.state;
         return <div>
-            <LifeCycle name={name} />
+            {error ? <p>{error.message}</p> : <LifeCycle name={name} />}
             <button type='button' className='btn' onClick={() => {
                 this.setState({ name: "Virat Kohli" })
             }}>Change Name</button>
@@ -35,4 +46,4 @@ export default class App extends Component {
     }
 }
 
-root.render(<App />)
+root.render(<App />)  
