@@ -1,0 +1,44 @@
+{
+  "todoList": [
+    {
+      "id": "927d",
+      "text": "learn react",
+      "isDone": true
+    },
+    {
+      "id": "f229",
+      "text": "learn flutter",
+      "isDone": false
+    },
+    {
+      "id": "346c",
+      "text": "get milk",
+      "isDone": false
+    },
+    {
+      "id": "86f2",
+      "text": "asdfdas",
+      "isDone": true
+    },
+    {
+      "id": "ed1a",
+      "text": "asd",
+      "isDone": true
+    },
+    {
+      "id": "b51c",
+      "text": "asdf",
+      "isDone": true
+    },
+    {
+      "id": "ae3f",
+      "text": "asdf",
+      "isDone": false
+    },
+    {
+      "id": "f142",
+      "text": "asdfadsfasdf",
+      "isDone": false
+    }
+  ]
+}
