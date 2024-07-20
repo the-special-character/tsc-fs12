@@ -30,7 +30,7 @@ export default class TodoItem extends PureComponent {
 
   render() {
     console.log("todo item");
-    const { item, updateTodo, deleteTodo, isLast } = this.props;
+    const { item, updateTodo, deleteTodo, isLast, status } = this.props;
     const { isUpdating } = this.state;
     return (
       <li className="list-none m-4" key={item.id}>
@@ -75,7 +75,11 @@ export default class TodoItem extends PureComponent {
               </Button>
             </div>
           )}
-          <Button size="icon" onClick={() => deleteTodo(item)}>
+          <Button
+            disabled={status?.status === "loading"}
+            size="icon"
+            onClick={() => deleteTodo(item)}
+          >
             <Trash className="h-4 w-4" />
           </Button>
         </div>
