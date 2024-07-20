@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { createRoot } from "react-dom/client";
 import "./style.css";
+import { Button } from "./components/ui/button"
+import Todo from './Todo';
 
 // Clear the existing HTML content
 document.body.innerHTML = '<div id="app"></div>';
@@ -9,4 +11,4 @@ document.body.innerHTML = '<div id="app"></div>';
 const root = createRoot(document.getElementById("app"));
 
 
-root.render(<App />)  
+root.render(<Todo />)  
