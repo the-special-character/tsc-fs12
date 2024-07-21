@@ -1,25 +1,39 @@
-import React, { Component } from 'react'
-import { Input } from '../components/ui/input'
-import { Label } from '../components/ui/label'
-import { Button } from '../components/ui/button'
+import React, { Component, createRef } from 'react'
+
+import TodoForm from './todoForm'
+import TodoList from './todoList';
 
 export default class Todo extends Component {
+    state = {
+        todoList: []
+    }
+    todoText = createRef();
+    addTodo = (e) => {
+        e.preventDefault();
+        const todoTextRef = this.todoText.current;
+        // async
+        this.setState(({ todoList },) => {
+            const todoText = todoTextRef.value;
+            return {
+                todoList: [...todoList,
+                { id: new Date().valueOf(), text: todoText, isDone: false }],
+            }
+        }, () => {
+            // sync
+            todoTextRef.value = "";
+        })
+
+    };
     render() {
+        const { todoList } = this.state
         return (
             <div className='h-screen bg-slate-300 flex flex-col  items-center p-4'>
                 <h1>Todo List</h1>
-
-                <form className='flex m-5'>
-                    <div className='grid w-full max-w-sm items-center gap-1.5 flex-col '>
-                        <Label htmlFor="todoText" className='sr-only '>Todo Text</Label>
-                        <Input type="text"
-                            id='todoText'
-                            placeholder='Enter your todo here...'
-                            className='rounded-r-none'
-                        />
-                    </div>
-                    <Button className='rounded-l-none'>Add Todo</Button>
-                </form>
+                <TodoForm
+                    addTodo={this.addTodo}
+                    ref={this.todoText}
+                />
+                <TodoList todoList={todoList} />
             </div>
         )
     }
