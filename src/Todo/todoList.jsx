@@ -1,73 +1,24 @@
 import React from "react";
+import TodoItem from "./todoItem";
 
-const TodoList = ({
-  todoList,
-  filterType,
-  editedItem,
-  updateTodo,
-  updateItem,
-  changeEditText,
-  editItem,
-  deleteTodo,
-}) => {
+const TodoList = ({ todoList, updateTodo, deleteTodo, status }) => {
+  console.log("todo list");
   return (
-    <div className="flex flex-1 flex-col gap-4 w-full p-6 overflow-auto">
-      {todoList.map((item) => {
-        if (
-          filterType === "all" ||
-          (filterType === "pending" && item.isDone === false) ||
-          (filterType === "completed" && item.isDone === true)
-        ) {
-          return (
-            <div className="flex items-center gap-4" key={item.id}>
-              <div>
-                <label htmlFor="isCompleted" className="sr-only">
-                  Toggle Complete
-                </label>
-                <input
-                  type="checkbox"
-                  name="isCompleted"
-                  id="isCompleted"
-                  checked={item.isDone}
-                  onChange={() => updateTodo(item)}
-                />
-              </div>
-              {editedItem.some((x) => x.id === item.id) ? (
-                <form
-                  className="flex flex-1"
-                  onSubmit={(event) => updateItem(event, item)}
-                >
-                  <div className="flex-1">
-                    <label htmlFor="editTodo" className="sr-only">
-                      Edit Todo
-                    </label>
-                    <input
-                      type="text"
-                      id="editTodo"
-                      value={item.todoText}
-                      onChange={(event) => changeEditText(event, item)}
-                    />
-                  </div>
-                  <button type="submit" className="btn">
-                    Update Value
-                  </button>
-                </form>
-              ) : (
-                <p className="flex-1 line-clamp-2">{item.todoText}</p>
-              )}
-
-              <button className="btn" onClick={() => editItem(item)}>
-                Edit
-              </button>
-              <button className="btn" onClick={() => deleteTodo(item)}>
-                Delete
-              </button>
-            </div>
-          );
-        }
-        return null;
+    <ul className="w-full m-0 p-0 flex-1 overflow-auto">
+      {todoList.map((item, i) => {
+        const deleteStatus = status.find((x) => x.id === item.id);
+        return (
+          <TodoItem
+            key={item.id}
+            item={item}
+            updateTodo={updateTodo}
+            deleteTodo={deleteTodo}
+            status={deleteStatus}
+            isLast={i + 1 === todoList.length}
+          />
+        );
       })}
-    </div>
+    </ul>
   );
 };
 

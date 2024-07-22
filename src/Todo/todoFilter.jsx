@@ -1,38 +1,30 @@
 import React from "react";
+import { Button } from "../components/ui/button";
 
-const TodoFilter = ({ filterType, changeFilterType }) => {
+const TodoFilter = ({ filterType, onChangeFilterType }) => {
   return (
     <div className="w-full flex">
-      <button
-        type="button"
-        className="btn rounded-none flex-1"
-        style={{
-          backgroundColor: filterType === "all" ? "orange" : "blue",
-        }}
-        onClick={() => changeFilterType("all")}
+      <Button
+        variant={filterType === "all" ? "default" : "secondary"}
+        onClick={() => onChangeFilterType("all")}
+        className="flex-1 rounded-none"
       >
         All
-      </button>
-      <button
-        type="button"
-        className="btn rounded-none flex-1"
-        style={{
-          backgroundColor: filterType === "pending" ? "orange" : "blue",
-        }}
-        onClick={() => changeFilterType("pending")}
+      </Button>
+      <Button
+        variant={filterType === "pending" ? "default" : "secondary"}
+        onClick={() => onChangeFilterType("pending")}
+        className="flex-1 rounded-none"
       >
         Pending
-      </button>
-      <button
-        type="button"
-        className="btn rounded-none flex-1"
-        style={{
-          backgroundColor: filterType === "completed" ? "orange" : "blue",
-        }}
-        onClick={() => changeFilterType("completed")}
+      </Button>
+      <Button
+        variant={filterType === "completed" ? "default" : "secondary"}
+        onClick={() => onChangeFilterType("completed")}
+        className="flex-1 rounded-none"
       >
         Completed
-      </button>
+      </Button>
     </div>
   );
 };

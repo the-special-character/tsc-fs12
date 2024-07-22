@@ -1,27 +1,34 @@
-import React from "react";
+import React, { forwardRef } from "react";
+import { Label } from "../components/ui/label";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
 
-const TodoForm = ({ todoText, changeText, addTodo }) => {
+const TodoForm = forwardRef(({ addTodo, status }, ref) => {
   return (
-    <form className="flex" onSubmit={addTodo}>
-      <div>
-        <label htmlFor="todoText" className="sr-only">
+    <form className="flex m-5" onSubmit={addTodo}>
+      <div className="grid w-full max-w-sm items-center gap-1.5">
+        <Label htmlFor="todoText" className="sr-only">
           Todo Text
-        </label>
-        <input
+        </Label>
+        <Input
+          ref={ref}
           type="text"
           id="todoText"
-          placeholder="Enter your todo here..."
-          className="rounded-l-md"
-          value={todoText}
-          onChange={changeText}
-          required
+          placeholder="Enter your todo here.."
+          className="rounded-r-none"
         />
       </div>
-      <button type="submit" className="btn rounded-l-none">
+      <Button
+        disabled={status?.status === "loading"}
+        type="submit"
+        className="rounded-l-none"
+      >
         Add Todo
-      </button>
+      </Button>
     </form>
   );
-};
+});
+
+TodoForm.displayName = "TodoForm";
 
 export default TodoForm;
