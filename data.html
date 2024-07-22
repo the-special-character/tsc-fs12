@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch and Display Data</title>
+    <style>
+        .data-container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .product, .cart {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="products" class="data-container">
+        <h2>Products</h2>
+    </div>
+    <div id="carts" class="data-container">
+        <h2>Carts</h2>
+    </div>
+
+    <script>
+        const loadData = async () => {
+            try {
+                const res = await Promise.all([
+                    fetch("https://fakestoreapi.com/products"),
+                    fetch("https://fakestoreapi.com/carts")
+                ]);
+
+                const json = await Promise.all(res.map(x => x.json()));
+
+                const products = json[0];
+                const carts = json[1];
+
+                displayProducts(products);
+                displayCarts(carts);
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        };
+
+        const displayProducts = (products) => {
+            const productsContainer = document.getElementById('products');
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <p><strong>ID:</strong> ${product.id}</p>
+                    <p><strong>Title:</strong> ${product.title}</p>
+                    <p><strong>Price:</strong> $${product.price}</p>
+                    <p><strong>Description:</strong> ${product.description}</p>
+                `;
+                productsContainer.appendChild(productDiv);
+            });
+        };
+
+        const displayCarts = (carts) => {
+            const cartsContainer = document.getElementById('carts');
+            carts.forEach(cart => {
+                const cartDiv = document.createElement('div');
+                cartDiv.className = 'cart';
+                cartDiv.innerHTML = `
+                    <p><strong>ID:</strong> ${cart.id}</p>
+                    <p><strong>User ID:</strong> ${cart.userId}</p>
+                    <p><strong>Date:</strong> ${cart.date}</p>
+                    <p><strong>Products:</strong> ${cart.products.map(p => `Product ID: ${p.productId}, Quantity: ${p.quantity}`).join(', ')}</p>
+                `;
+                cartsContainer.appendChild(cartDiv);
+            });
+        };
+
+        loadData();
+    </script>
+</body>
+</html>
