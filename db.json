@@ -1,21 +1,6 @@
 {
   "todoList": [
     {
-      "id": "ed1a",
-      "text": "asd",
-      "isDone": true
-    },
-    {
-      "id": "ae3f",
-      "text": "asdf",
-      "isDone": false
-    },
-    {
-      "id": "ecb1",
-      "text": "asdfasdfadsf",
-      "isDone": true
-    },
-    {
       "id": "20d5",
       "text": "asdfasdfadsf",
       "isDone": false
@@ -27,7 +12,7 @@
     },
     {
       "id": "52e3",
-      "text": "hello",
+      "text": "darshan ",
       "isDone": false
     },
     {
@@ -37,7 +22,7 @@
     },
     {
       "id": "e4fc",
-      "text": "helllo",
+      "text": "helllodarshan",
       "isDone": false
     },
     {
@@ -58,6 +43,11 @@
     {
       "id": "5445",
       "text": "asdfasdfdasf",
+      "isDone": false
+    },
+    {
+      "id": "1277",
+      "text": "dars",
       "isDone": false
     }
   ]

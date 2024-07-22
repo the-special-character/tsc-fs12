@@ -106,9 +106,51 @@ export default class Todo extends Component {
     }
   };
 
+  // updateTodo = async (item) => {
+  //   const currentState = "UPDATE_TODO";
+  //   try {
+  //     const res = await fetch(`http://localhost:3000/todoList/${item.id}`, {
+  //       method: "PUT",
+  //       body: JSON.stringify(item),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //     });
+
+  //     const json = await res.json();
+
+  //     this.setState(({ todoList }) => {
+  //       const index = todoList.findIndex((x) => x.id === item.id);
+  //       return {
+  //         todoList: [
+  //           ...todoList.slice(0, index),
+  //           json,
+  //           ...todoList.slice(index + 1),
+  //         ],
+  //       };
+  //     });
+  //   } catch (error) { }
+  // };
+
   updateTodo = async (item) => {
+    const currentState = "UPDATE_TODO";
     try {
-      const res = await fetch(`http://localhost:3000/todoList/${item.id}`, {
+      this.setState(({ status }) => {
+        return {
+          status: [
+            ...status,
+            {
+              id: item.id,
+              state: currentState,
+              status: "loading",
+              message: "Todo List is loading...",
+            },
+          ],
+        };
+      });
+
+      await fetch(`http://localhost:3000/todoList/${item.id}`, {
         method: "PUT",
         body: JSON.stringify(item),
         headers: {
@@ -129,7 +171,17 @@ export default class Todo extends Component {
           ],
         };
       });
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      this.setState(({ status }) => {
+        const index = status.findIndex(
+          (x) => x.state === currentState && x.id === item.id
+        );
+        return {
+          status: [...status.slice(0, index), ...status.slice(index + 1)],
+        };
+      });
+    }
   };
 
   deleteTodo = async (item) => {
