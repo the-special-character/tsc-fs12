@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 // import Todo from "./Todo";
 import "./style.css";
@@ -14,17 +14,17 @@ const root = createRoot(document.getElementById("app"));
 
 // Mounting
 
-// Constructor
-// getDerivedStatFromProps
-// render
-// componentDidMount
+// Constructor -> achieved
+// getDerivedStatFromProps -> achieved
+// render -> achieved
+// componentDidMount -> achieved
 
 // Updating
-// getDerivedStatFromProps
-// shouldComponentUpdate
-// render
+// getDerivedStatFromProps -> achieved
+// shouldComponentUpdate -> achived
+// render -> achieved
 // getSnapshotBeforeUpdate(not possible with component)
-// componentDidUpdate
+// componentDidUpdate -> achieved
 
 // UnMouning
 // componentWillUnmount
@@ -36,6 +36,18 @@ const root = createRoot(document.getElementById("app"));
 const Test = ({ name }) => {
   const [username, setUsername] = useState(name);
 
+  useEffect(() => {
+    const mouseMove = () => {
+      console.log("mouse Moved");
+    };
+
+    document.addEventListener("mousemove", mouseMove);
+    // componnentwillunmount
+    return () => {
+      document.removeEventListener("mousemove", mouseMove);
+    };
+  }, []);
+
   return (
     <>
       <p>{username}</p>
@@ -44,9 +56,36 @@ const Test = ({ name }) => {
   );
 };
 
+const MemorizedTest = memo(Test);
+
+const Counter = ({ initCount }) => {
+  const [number, setNumber] = useState(initCount);
+
+  useEffect(() => {
+    setNumber(initCount);
+  }, [initCount]);
+
+  const inc = () => {
+    setNumber((val) => val + 1);
+  };
+
+  const desc = () => {
+    setNumber((val) => val - 1);
+  };
+
+  return (
+    <div>
+      <Button onClick={inc}>+</Button>
+      {number}
+      <Button onClick={desc}>-</Button>
+    </div>
+  );
+};
+
 const App = () => {
   const [counter, setCounter] = useState(0);
-  const isMounted = useRef(false);
+  const title = useRef(null);
+  const mounted = useRef(false);
 
   const inc = () => {
     setCounter((val) => val + 1);
@@ -56,24 +95,29 @@ const App = () => {
     setCounter((val) => val - 1);
   };
 
+  // componentDidMount + compnentDidUpdate
   useEffect(() => {
-    if (isMounted.current) {
-      console.log("component Did Mount + Update + both");
+    if (mounted.current) {
+      console.log("componentDidMount + compnentDidUpdate");
     }
   }, [counter]);
 
-  //   Component Did Mount
+  // componentDidMount
   useEffect(() => {
-    console.log("component Did Mount");
-    isMounted.current = true;
+    console.log("Mounted");
+    console.log(title.current);
+    mounted.current = true;
   }, []);
 
   return (
     <div>
+      <h1 ref={title}>hello</h1>
       <Button onClick={inc}>+</Button>
       {counter}
       <Button onClick={desc}>-</Button>
-      <Test name="Yagnesh" />
+      {counter < 5 && <Test name="Yagnesh" />}
+
+      <Counter initCount={counter} />
     </div>
   );
 };
