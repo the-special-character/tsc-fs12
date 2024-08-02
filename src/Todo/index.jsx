@@ -1,10 +1,4 @@
-import React, {
-  Component,
-  createRef,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { Component, createRef, useEffect, useRef, useState, } from "react";
 import TodoForm from "./todoForm";
 import TodoList from "./todoList";
 import TodoFilter from "./todoFilter";
@@ -29,7 +23,7 @@ const Todo = () => {
 
       let url = "http://localhost:3000/todoList";
       if (ft !== "all") {
-        url += `?isDone=${filterType === "completed"}`;
+        url += `? isDone = ${filterType === "completed"}`;
       }
 
       const res = await fetch(url);
@@ -45,11 +39,103 @@ const Todo = () => {
     }
   };
 
-  const addTodo = () => {};
+  const addTodo = async (e) => {
+    const currentState = "ADD_TODO";
+    try {
+      e.preventDefault();
 
-  const updateTodo = () => {};
+      setStatus((val) => [
+        ...val,
+        {
+          state: currentState,
+          status: "loading",
+          message: "Adding new todo...",
+        },
+      ]);
 
-  const deleteTodo = () => {};
+      const todoTextRef = todoText.current; // Correctly access useRef
+
+      const res = await fetch("http://localhost:3000/todoList", {
+        method: "POST",
+        body: JSON.stringify({
+          text: todoTextRef.value,
+          isDone: false,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+
+      const json = await res.json();
+
+      setTodoList((val) => [...val, json]); // Add the new todo to the list
+      todoTextRef.value = ""; // Clear the input field
+    } catch (error) {
+      console.error(error);
+    }
+
+    finally {
+      setStatus((val) => {
+        const index = val.findIndex((x) => x.state === currentState);
+        return [...val.slice(0, index), ...val.slice(index + 1)];
+      });
+    }
+  };
+
+  const updateTodo = async (item) => {
+    try {
+      const res = await fetch(`http://localhost:3000/todoList/${item.id}`, {
+        method: "PUT",
+        body: JSON.stringify(item),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+
+      const json = await res.json();
+
+      setTodoList((val) => {
+        const index = val.findIndex((x) => x.id === item.id);
+        return [
+          ...val.slice(0, index),
+          json,
+          ...val.slice(index + 1),
+        ];
+      });
+    } catch (error) { }
+  };
+
+  const deleteTodo = async (item) => {
+    const currentState = "DELETE_TODO";
+    try {
+      setStatus((val) => {
+        return [
+          ...val,
+          {
+            id: item.id,
+            state: currentState,
+            status: "loading",
+            message: "Deleting Todo...",
+          },
+        ];
+      });
+
+      await fetch(`http://localhost:3000/todoList/${item.id}`, {
+        method: "DELETE",
+      });
+
+      setTodoList((val) => val.filter((todo) => todo.id !== item.id));
+
+    } catch (error) {
+    } finally {
+      setStatus((val) => {
+        const index = val.findIndex((x) => x.state === currentState && x.id === item.id);
+        return [...val.slice(0, index), ...val.slice(index + 1)];
+      });
+    }
+  };
 
   const addTodoStatus = status.find((x) => x.state === "ADD_TODO");
   const loadTodoStatus = status.find((x) => x.state === "LOAD_TODO");
@@ -68,8 +154,7 @@ const Todo = () => {
           <h1>{loadTodoStatus.message}</h1>
         </div>
       ) : (
-        <TodoList
-          todoList={todoList}
+        <TodoList todoList={todoList}
           updateTodo={updateTodo}
           deleteTodo={deleteTodo}
           filterType={filterType}
@@ -112,7 +197,7 @@ export default Todo;
 
 //       let url = "http://localhost:3000/todoList";
 //       if (filterType !== "all") {
-//         url += `?isDone=${filterType === "completed"}`;
+//         url += ?isDone=${filterType === "completed"};
 //       }
 
 //       const res = await fetch(url);
@@ -186,7 +271,7 @@ export default Todo;
 
 //   updateTodo = async (item) => {
 //     try {
-//       const res = await fetch(`http://localhost:3000/todoList/${item.id}`, {
+//       const res = await fetch(http://localhost:3000/todoList/${item.id}, {
 //         method: "PUT",
 //         body: JSON.stringify(item),
 //         headers: {
@@ -227,7 +312,7 @@ export default Todo;
 //         };
 //       });
 
-//       await fetch(`http://localhost:3000/todoList/${item.id}`, {
+//       await fetch(http://localhost:3000/todoList/${item.id}, {
 //         method: "DELETE",
 //       });
 
