@@ -1,7 +1,9 @@
 import React, {
   Component,
   createRef,
+  useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -15,7 +17,7 @@ const Todo = () => {
   const [todoList, setTodoList] = useState([]);
   const [filterType, setFilterType] = useState("all");
 
-  const loadTodo = async (ft) => {
+  const loadTodo = useCallback(async (ft) => {
     const currentState = "LOAD_TODO";
     try {
       setStatus((val) => [
@@ -43,9 +45,9 @@ const Todo = () => {
         return [...val.slice(0, index), ...val.slice(index + 1)];
       });
     }
-  };
+  }, []);
 
-  const addTodo = async (e) => {
+  const addTodo = useCallback(async (e) => {
     const currentState = "ADD_TODO";
     try {
       e.preventDefault();
@@ -85,9 +87,9 @@ const Todo = () => {
         return [...val.slice(0, index), ...val.slice(index + 1)];
       });
     }
-  };
+  }, []);
 
-  const updateTodo = async (item) => {
+  const updateTodo = useCallback(async (item) => {
     try {
       const res = await fetch(`http://localhost:3000/todoList/${item.id}`, {
         method: "PUT",
@@ -105,9 +107,9 @@ const Todo = () => {
         return [...val.slice(0, index), json, ...val.slice(index + 1)];
       });
     } catch (error) {}
-  };
+  }, []);
 
-  const deleteTodo = async (item) => {
+  const deleteTodo = useCallback(async (item) => {
     const currentState = "DELETE_TODO";
     try {
       setStatus((val) => [
@@ -134,11 +136,20 @@ const Todo = () => {
         return [...val.slice(0, index), ...val.slice(index + 1)];
       });
     }
-  };
+  }, []);
 
-  const addTodoStatus = status.find((x) => x.state === "ADD_TODO");
-  const loadTodoStatus = status.find((x) => x.state === "LOAD_TODO");
-  const deleteTodoStatus = status.filter((x) => x.state === "DELETE_TODO");
+  const addTodoStatus = useMemo(
+    () => status.find((x) => x.state === "ADD_TODO"),
+    [status]
+  );
+  const loadTodoStatus = useMemo(
+    () => status.find((x) => x.state === "LOAD_TODO"),
+    [status]
+  );
+  const deleteTodoStatus = useMemo(
+    () => status.filter((x) => x.state === "DELETE_TODO"),
+    [status]
+  );
 
   useEffect(() => {
     loadTodo("all");
@@ -197,7 +208,7 @@ export default Todo;
 
 //       let url = "http://localhost:3000/todoList";
 //       if (filterType !== "all") {
-//         url += `?isDone=${filterType === "completed"}`;
+//         url += ?isDone=${filterType === "completed"};
 //       }
 
 //       const res = await fetch(url);
@@ -271,7 +282,7 @@ export default Todo;
 
 //   updateTodo = async (item) => {
 //     try {
-//       const res = await fetch(`http://localhost:3000/todoList/${item.id}`, {
+//       const res = await fetch(http://localhost:3000/todoList/${item.id}, {
 //         method: "PUT",
 //         body: JSON.stringify(item),
 //         headers: {
@@ -312,7 +323,7 @@ export default Todo;
 //         };
 //       });
 
-//       await fetch(`http://localhost:3000/todoList/${item.id}`, {
+//       await fetch(http://localhost:3000/todoList/${item.id}, {
 //         method: "DELETE",
 //       });
 
