@@ -1,7 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { Button } from "../components/ui/button";
 
 const TodoFilter = ({ filterType, onChangeFilterType }) => {
+  console.log("TodoFilter render");
   return (
     <div className="w-full flex">
       <Button
@@ -29,4 +30,4 @@ const TodoFilter = ({ filterType, onChangeFilterType }) => {
   );
 };
 
-export default TodoFilter;
+export default memo(TodoFilter);

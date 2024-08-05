@@ -1,4 +1,11 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, {
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { createRoot } from "react-dom/client";
 import Todo from "./Todo";
 import "./style.css";
@@ -10,7 +17,43 @@ document.body.innerHTML = '<div id="app"></div>';
 // Render your React component instead
 const root = createRoot(document.getElementById("app"));
 
-root.render(<Todo />);
+const Counter = ({ inc, dec, user }) => {
+  console.log("render counter");
+
+  return (
+    <div>
+      <button onClick={inc}>+</button>
+      <p>{0}</p>
+      <button onClick={dec}>-</button>
+
+      <p>{user.name}</p>
+    </div>
+  );
+};
+
+const MemorizedCounter = memo(Counter);
+
+const App = () => {
+  const [val, setVal] = useState(0);
+
+  const inc = useCallback(() => {
+    setVal((val) => val + 1);
+  }, []);
+
+  const dec = useCallback(() => {
+    setVal((val) => val - 1);
+  }, []);
+
+  const user = useMemo(() => ({ name: "yagnesh" }), []);
+
+  return (
+    <div>
+      <MemorizedCounter inc={inc} dec={dec} user={user} />
+    </div>
+  );
+};
+
+root.render(<App />);
 
 // Life Cycle
 

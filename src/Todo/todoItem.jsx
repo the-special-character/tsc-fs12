@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { Trash, Edit, Check } from "lucide-react";
 import { Checkbox } from "../components/ui/checkbox";
 import { Button } from "../components/ui/button";
@@ -7,6 +7,8 @@ import { cn } from "../lib/utils";
 import { Input } from "../components/ui/input";
 
 const TodoItem = ({ item, updateTodo, deleteTodo, isLast, status }) => {
+  console.log("todoitem render");
+
   const [isUpdating, setIsUpdating] = useState(false);
   const editInput = useRef(null);
 
@@ -76,4 +78,4 @@ const TodoItem = ({ item, updateTodo, deleteTodo, isLast, status }) => {
   );
 };
 
-export default TodoItem;
+export default memo(TodoItem);

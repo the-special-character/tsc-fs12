@@ -1,9 +1,10 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, memo } from "react";
 import { Label } from "../components/ui/label";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 
 const TodoForm = forwardRef(({ addTodo, status }, ref) => {
+  console.log("TodoForm render");
   return (
     <form className="flex m-5" onSubmit={addTodo}>
       <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -31,4 +32,4 @@ const TodoForm = forwardRef(({ addTodo, status }, ref) => {
 
 TodoForm.displayName = "TodoForm";
 
-export default TodoForm;
+export default memo(TodoForm);

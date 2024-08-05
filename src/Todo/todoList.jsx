@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import TodoItem from "./todoItem";
 
 const TodoList = ({ todoList, updateTodo, deleteTodo, status }) => {
-  console.log("todo list");
+  console.log("todolist render");
   return (
     <ul className="w-full m-0 p-0 flex-1 overflow-auto">
       {todoList.map((item, i) => {
@@ -22,4 +22,4 @@ const TodoList = ({ todoList, updateTodo, deleteTodo, status }) => {
   );
 };
 
-export default TodoList;
+export default memo(TodoList);
