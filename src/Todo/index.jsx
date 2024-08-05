@@ -29,7 +29,7 @@ const Todo = () => {
 
       let url = "http://localhost:3000/todoList";
       if (ft !== "all") {
-        url += `?isDone=${filterType === "completed"}`;
+        url += `?isDone=${ft === "completed"}`;
       }
 
       const res = await fetch(url);
@@ -45,11 +45,96 @@ const Todo = () => {
     }
   };
 
-  const addTodo = () => {};
+  const addTodo = async (e) => {
+    const currentState = "ADD_TODO";
+    try {
+      e.preventDefault();
+      setStatus((val) => [
+        ...val,
+        {
+          state: currentState,
+          status: "loading",
+          message: "Todo List is loading...",
+        },
+      ]);
 
-  const updateTodo = () => {};
+      const todoTextRef = todoText.current;
+      const text = todoTextRef.value;
 
-  const deleteTodo = () => {};
+      const res = await fetch("http://localhost:3000/todoList", {
+        method: "POST",
+        body: JSON.stringify({
+          text,
+          isDone: false,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      const json = await res.json();
+
+      setTodoList((val) => [...val, json]);
+
+      todoTextRef.value = "";
+      // async code
+    } catch (error) {
+    } finally {
+      setStatus((val) => {
+        const index = val.findIndex((x) => x.state === currentState);
+        return [...val.slice(0, index), ...val.slice(index + 1)];
+      });
+    }
+  };
+
+  const updateTodo = async (item) => {
+    try {
+      const res = await fetch(`http://localhost:3000/todoList/${item.id}`, {
+        method: "PUT",
+        body: JSON.stringify(item),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+
+      const json = await res.json();
+
+      setTodoList((val) => {
+        const index = val.findIndex((x) => x.id === item.id);
+        return [...val.slice(0, index), json, ...val.slice(index + 1)];
+      });
+    } catch (error) {}
+  };
+
+  const deleteTodo = async (item) => {
+    const currentState = "DELETE_TODO";
+    try {
+      setStatus((val) => [
+        ...val,
+        {
+          state: currentState,
+          status: "loading",
+          message: "Todo List is loading...",
+        },
+      ]);
+
+      await fetch(`http://localhost:3000/todoList/${item.id}`, {
+        method: "DELETE",
+      });
+
+      setTodoList((val) => {
+        const index = val.findIndex((x) => x.id === item.id);
+        return [...val.slice(0, index), ...val.slice(index + 1)];
+      });
+    } catch (error) {
+    } finally {
+      setStatus((val) => {
+        const index = val.findIndex((x) => x.state === currentState);
+        return [...val.slice(0, index), ...val.slice(index + 1)];
+      });
+    }
+  };
 
   const addTodoStatus = status.find((x) => x.state === "ADD_TODO");
   const loadTodoStatus = status.find((x) => x.state === "LOAD_TODO");
