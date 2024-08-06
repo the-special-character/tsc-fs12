@@ -16,6 +16,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "output"),
     filename: "main.js",
+    publicPath: "/",
   },
   mode: "development",
   optimization: {
@@ -44,5 +45,8 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
 };
