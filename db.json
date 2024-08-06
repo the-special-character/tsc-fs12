@@ -1,43 +1,8 @@
 {
   "todoList": [
     {
-      "id": "8132",
-      "text": "kearn asdfdas",
-      "isDone": true
-    },
-    {
-      "id": "5445",
-      "text": "learn",
-      "isDone": true
-    },
-    {
-      "id": "c6bf",
-      "text": "learn react",
-      "isDone": false
-    },
-    {
-      "id": "713a",
-      "text": "hello",
-      "isDone": false
-    },
-    {
-      "id": "6500",
-      "text": "learn",
-      "isDone": false
-    },
-    {
-      "id": "cff6",
-      "text": "learn",
-      "isDone": false
-    },
-    {
-      "id": "5f5a",
-      "text": "learn",
-      "isDone": false
-    },
-    {
-      "id": "571c",
-      "text": "learn react",
+      "id": "6b4b",
+      "text": "sdf",
       "isDone": false
     }
   ]

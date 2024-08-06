@@ -53,7 +53,7 @@ const App = () => {
   );
 };
 
-root.render(<App />);
+root.render(<Todo />);
 
 // Life Cycle
 
