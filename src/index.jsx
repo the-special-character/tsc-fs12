@@ -7,6 +7,7 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import ForgotPassword from "./pages/forgotPassword";
 import AuthLayout from "./layouts/authLayout";
+import Dashboard from "./layouts/mainLayout";
 
 // Clear the existing HTML content
 document.body.innerHTML = '<div id="app"></div>';
@@ -17,7 +18,13 @@ const root = createRoot(document.getElementById("app"));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Dashboard />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
   },
   {
     path: "auth",
