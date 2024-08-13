@@ -1,35 +1,51 @@
 import React from "react";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
+import CustomForm from "../components/form/customForm";
+
+const fields = [
+  {
+    label: "Email",
+    placeholder: "elon.musk@tesla.com",
+    name: "email",
+    type: "email",
+    defaultValue: "",
+    autoComplete: "email",
+    rules: {
+      required: {
+        value: true,
+        message: "Email is mendatory..",
+      },
+    },
+  },
+
+  {
+    label: "Password",
+    placeholder: "Strong Password",
+    name: "password",
+    type: "password",
+    autoComplete: "new-password",
+    defaultValue: "",
+    rules: {
+      required: {
+        value: true,
+        message: "Password is mendatory..",
+      },
+    },
+  },
+];
 
 function Login() {
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
-    <form className="grid gap-4">
-      <div className="grid gap-2">
-        <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" placeholder="m@example.com" required />
-      </div>
-      <div className="grid gap-2">
-        <div className="flex items-center">
-          <Label htmlFor="password">Password</Label>
-          <Link
-            to="/forgot-password"
-            className="ml-auto inline-block text-sm underline"
-          >
-            Forgot your password?
-          </Link>
-        </div>
-        <Input id="password" type="password" required />
-      </div>
-      <Button type="submit" className="w-full">
-        Login
-      </Button>
+    <>
+      <CustomForm fields={fields} onSubmit={onSubmit} />
       <Button variant="outline" className="w-full">
         Login with Google
       </Button>
-    </form>
+    </>
   );
 }
 
