@@ -14,8 +14,8 @@ const CustomForm = ({ fields, onSubmit }) => {
 
   return (
     <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)}>
-      {fields.map((item) => (
-        <FormInput key={item.name} control={control} {...item} />
+      {fields.map(({ component: Component, ...rest }) => (
+        <Component key={rest.name} control={control} {...rest} />
       ))}
 
       <Button

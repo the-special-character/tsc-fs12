@@ -1,6 +1,9 @@
 import React from "react";
 import { Button } from "../components/ui/button";
 import CustomForm from "../components/form/customForm";
+import FormInput from "../components/form/Input";
+import FormSelect from "../components/form/Select";
+import FormRadioGroup from "../components/form/RadioGroup";
 
 const wait = (time) =>
   new Promise((resolve) => {
@@ -9,6 +12,7 @@ const wait = (time) =>
 
 const fields = [
   {
+    component: FormInput,
     label: "Name",
     placeholder: "Elon Musk",
     name: "name",
@@ -22,6 +26,7 @@ const fields = [
     },
   },
   {
+    component: FormInput,
     label: "Email",
     placeholder: "elon.musk@tesla.com",
     name: "email",
@@ -36,7 +41,8 @@ const fields = [
     },
   },
   {
-    label: "birthDate",
+    component: FormInput,
+    label: "Birth Date",
     placeholder: "04/08/1987",
     name: "birthDate",
     type: "date",
@@ -50,6 +56,60 @@ const fields = [
     },
   },
   {
+    component: FormSelect,
+    label: "Gender",
+    placeholder: "Select Gender",
+    name: "gender",
+    defaultValue: "",
+    options: [
+      {
+        value: "male",
+        text: "Male",
+      },
+      {
+        value: "female",
+        text: "Female",
+      },
+      {
+        value: "other",
+        text: "Other",
+      },
+    ],
+    rules: {
+      required: {
+        value: true,
+        message: "Gender is mendatory..",
+      },
+    },
+  },
+  {
+    component: FormRadioGroup,
+    label: "Xyz",
+    name: "xyz",
+    defaultValue: "",
+    options: [
+      {
+        value: "a",
+        text: "A",
+      },
+      {
+        value: "b",
+        text: "B",
+      },
+      {
+        value: "c",
+        text: "C",
+      },
+    ],
+    rules: {
+      required: {
+        value: true,
+        message: "Gender is mendatory..",
+      },
+    },
+  },
+  {
+    component: FormInput,
     label: "Password",
     placeholder: "Strong Password",
     name: "password",
@@ -64,6 +124,7 @@ const fields = [
     },
   },
   {
+    component: FormInput,
     label: "Confirm Password",
     placeholder: "Confirm Password",
     name: "confirmPassword",
@@ -81,8 +142,7 @@ const fields = [
 
 function Register() {
   const onSubmit = async (data) => {
-    await wait(5000);
-    console.log("data");
+    console.log(data);
   };
 
   return (
