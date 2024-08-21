@@ -4,6 +4,8 @@ import CustomForm from "../components/form/customForm";
 import FormInput from "../components/form/Input";
 import FormSelect from "../components/form/Select";
 import FormRadioGroup from "../components/form/RadioGroup";
+import FormCheckboxGroup from "../components/form/CheckboxGroup";
+import FormSlider from "../components/form/Slider";
 
 const wait = (time) =>
   new Promise((resolve) => {
@@ -109,6 +111,32 @@ const fields = [
     },
   },
   {
+    component: FormCheckboxGroup,
+    label: "Hobbies",
+    name: "hobbies",
+    defaultValue: [],
+    options: [
+      {
+        value: "a",
+        text: "A",
+      },
+      {
+        value: "b",
+        text: "B",
+      },
+      {
+        value: "c",
+        text: "C",
+      },
+    ],
+    rules: {
+      required: {
+        value: true,
+        message: "Hobbies is mendatory..",
+      },
+    },
+  },
+  {
     component: FormInput,
     label: "Password",
     placeholder: "Strong Password",
@@ -116,6 +144,18 @@ const fields = [
     type: "password",
     autoComplete: "new-password",
     defaultValue: "",
+    rules: {
+      required: {
+        value: true,
+        message: "Password is mendatory..",
+      },
+    },
+  },
+  {
+    component: FormSlider,
+    label: "price",
+    name: "price",
+    defaultValue: [50, 70],
     rules: {
       required: {
         value: true,
