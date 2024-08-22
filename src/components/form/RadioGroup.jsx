@@ -1,40 +1,32 @@
 import React from "react";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { useController } from "react-hook-form";
-import { Label } from "../ui/label";
+import { FormControl, FormItem, FormLabel, FormMessage } from "../ui/form";
 
-const FormRadioGroup = ({
-  label,
-  name,
-  control,
-  rules,
-  defaultValue,
-  options,
-  ...props
-}) => {
-  const {
-    field,
-    fieldState: { error },
-  } = useController({
-    name,
-    control,
-    rules,
-    defaultValue,
-  });
-
+const FormRadioGroup = ({ field, options, label }) => {
   return (
-    <div className="grid gap-2">
-      <Label htmlFor={name}>{label}</Label>
-      <RadioGroup defaultValue={field.value} onValueChange={field.onChange}>
-        {options.map((option) => (
-          <div className="flex items-center space-x-2" key={option.value}>
-            <RadioGroupItem value={option.value} id="r1" />
-            <Label htmlFor="r1">{option.text}</Label>
-          </div>
-        ))}
-      </RadioGroup>
-      {error && <p className="small !m-0 text-red-400">{error.message}</p>}
-    </div>
+    <FormItem className="space-y-3">
+      <FormLabel>{label}</FormLabel>
+      <FormControl>
+        <RadioGroup
+          onValueChange={field.onChange}
+          defaultValue={field.value}
+          className="flex flex-col space-y-1"
+        >
+          {options.map((x) => (
+            <FormItem
+              key={x.value}
+              className="flex items-center space-x-3 space-y-0"
+            >
+              <FormControl>
+                <RadioGroupItem value={x.value} />
+              </FormControl>
+              <FormLabel className="font-normal">{x.text}</FormLabel>
+            </FormItem>
+          ))}
+        </RadioGroup>
+      </FormControl>
+      <FormMessage />
+    </FormItem>
   );
 };
 

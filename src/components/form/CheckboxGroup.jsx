@@ -1,47 +1,33 @@
 import React from "react";
-import { useController } from "react-hook-form";
-import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
+import { FormControl, FormItem, FormLabel, FormMessage } from "../ui/form";
 
-const FormCheckboxGroup = ({
-  label,
-  name,
-  control,
-  rules,
-  defaultValue,
-  options,
-  ...props
-}) => {
-  const {
-    field,
-    fieldState: { error },
-  } = useController({
-    name,
-    control,
-    rules,
-    defaultValue,
-  });
-
+const FormCheckboxGroup = ({ field, options, label }) => {
   return (
-    <div className="grid gap-2">
-      <Label htmlFor={name}>{label}</Label>
-      {options.map((option) => (
-        <div className="flex items-center space-x-2" key={option.value}>
-          <Checkbox
-            checked={field.value?.includes(option.value)}
-            onCheckedChange={(checked) => {
-              return checked
-                ? field.onChange([...field.value, option.value])
-                : field.onChange(
-                    field.value?.filter((value) => value !== option.value)
-                  );
-            }}
-          />
-          <Label htmlFor="r1">{option.text}</Label>
-        </div>
+    <FormItem>
+      <FormLabel className="text-base">{label}</FormLabel>
+      {options.map((item) => (
+        <FormItem
+          key={item.value}
+          className="flex flex-row items-start space-x-3 space-y-0"
+        >
+          <FormControl>
+            <Checkbox
+              checked={field.value?.includes(item.value)}
+              onCheckedChange={(checked) => {
+                return checked
+                  ? field.onChange([...field.value, item.value])
+                  : field.onChange(
+                      field.value?.filter((value) => value !== item.value)
+                    );
+              }}
+            />
+          </FormControl>
+          <FormLabel className="text-sm font-normal">{item.text}</FormLabel>
+        </FormItem>
       ))}
-      {error && <p className="small !m-0 text-red-400">{error.message}</p>}
-    </div>
+      <FormMessage />
+    </FormItem>
   );
 };
 
