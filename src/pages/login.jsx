@@ -6,6 +6,7 @@ import FormRadioGroup from "../components/form/RadioGroup";
 import FormCheckboxGroup from "../components/form/CheckboxGroup";
 import FormDatePicker from "../components/form/FormDatePicker";
 import FormComboBox from "../components/form/FormComboBox";
+import FormOTP from "../components/form/FormOTP";
 
 const fields = [
   {
@@ -35,6 +36,18 @@ const fields = [
       required: {
         value: true,
         message: "Password is mendatory..",
+      },
+    },
+  },
+  {
+    component: FormOTP,
+    label: "One time Password",
+    name: "otp",
+    defaultValue: "",
+    rules: {
+      required: {
+        value: true,
+        message: "Email is mendatory..",
       },
     },
   },
