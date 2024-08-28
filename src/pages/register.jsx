@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../components/ui/button";
-import CustomForm from "../components/form/customForm";
+import CustomForm from "../components/form/ReactHookForm";
 import FormInput from "../components/form/Input";
 import FormSelect from "../components/form/Select";
 import FormRadioGroup from "../components/form/RadioGroup";

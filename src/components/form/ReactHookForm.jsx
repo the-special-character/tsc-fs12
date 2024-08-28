@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { Form, FormField } from "../ui/form";
 import { cn } from "../../lib/utils";
 
-const CustomForm = ({ fields, onSubmit, className }) => {
+const ReactHookForm = ({ fields, onSubmit, className }) => {
   const form = useForm({
     mode: "all",
     defaultValues: fields.reduce(
@@ -43,4 +43,4 @@ const CustomForm = ({ fields, onSubmit, className }) => {
   );
 };
 
-export default CustomForm;
+export default ReactHookForm;

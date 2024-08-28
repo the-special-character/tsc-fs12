@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../components/ui/button";
-import CustomForm from "../components/form/customForm";
+import ReactHookForm from "../components/form/ReactHookForm";
 import FormInput from "../components/form/Input";
 import FormRadioGroup from "../components/form/RadioGroup";
 import FormCheckboxGroup from "../components/form/CheckboxGroup";
@@ -24,7 +24,6 @@ const fields = [
         message: "Email is mendatory..",
       },
     },
-    className: "col-span-full",
   },
   {
     component: FormInput,
@@ -40,7 +39,6 @@ const fields = [
         message: "Password is mendatory..",
       },
     },
-    className: "col-span-full",
   },
   {
     component: FormTextArea,
@@ -164,7 +162,11 @@ function Login() {
 
   return (
     <>
-      <CustomForm fields={fields} onSubmit={onSubmit} className="grid-cols-2" />
+      <ReactHookForm
+        fields={fields}
+        onSubmit={onSubmit}
+        className="grid-cols-2"
+      />
       <Button variant="outline" className="w-full">
         Login with Google
       </Button>
