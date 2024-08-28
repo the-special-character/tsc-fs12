@@ -2,9 +2,9 @@ import React from "react";
 import { Checkbox } from "../ui/checkbox";
 import { FormControl, FormItem, FormLabel, FormMessage } from "../ui/form";
 
-const FormCheckboxGroup = ({ field, options, label }) => {
+const FormCheckboxGroup = ({ field, options, label, className }) => {
   return (
-    <FormItem>
+    <FormItem className={className}>
       <FormLabel className="text-base">{label}</FormLabel>
       {options.map((item) => (
         <FormItem

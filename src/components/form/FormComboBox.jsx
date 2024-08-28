@@ -19,9 +19,9 @@ import {
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import { cn } from "../../lib/utils";
 
-const FormComboBox = ({ field, options }) => {
+const FormComboBox = ({ field, options, className }) => {
   return (
-    <FormItem className="flex flex-col">
+    <FormItem className={cn("flex flex-col", className)}>
       <FormLabel>Language</FormLabel>
       <Popover>
         <PopoverTrigger asChild>

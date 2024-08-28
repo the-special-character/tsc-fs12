@@ -1,40 +1,20 @@
 import React from "react";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { useController } from "react-hook-form";
 import { Slider } from "../ui/slider";
+import { FormDescription, FormItem, FormLabel, FormMessage } from "../ui/form";
 
-const FormSlider = ({
-  label,
-  name,
-  control,
-  rules,
-  defaultValue,
-  ...props
-}) => {
-  const {
-    field,
-    fieldState: { error },
-  } = useController({
-    name,
-    control,
-    rules,
-    defaultValue,
-  });
-
-  console.log(field.value);
-
+const FormSlider = ({ field, label, className, desc }) => {
   return (
-    <div className="grid gap-2">
-      <Label htmlFor={name}>{label}</Label>
+    <FormItem className={className}>
+      <FormLabel>{label}</FormLabel>
       <Slider
         value={field.value}
         onValueChange={field.onChange}
         max={100}
         step={1}
       />
-      {error && <p className="small !m-0 text-red-400">{error.message}</p>}
-    </div>
+      {desc && <FormDescription>{desc}</FormDescription>}
+      <FormMessage />
+    </FormItem>
   );
 };
 

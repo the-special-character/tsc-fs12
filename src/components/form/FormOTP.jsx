@@ -8,9 +8,9 @@ import {
 } from "../ui/form";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../ui/input-otp";
 
-const FormOTP = ({ field }) => {
+const FormOTP = ({ field, className }) => {
   return (
-    <FormItem>
+    <FormItem className={className}>
       <FormLabel>One-Time Password</FormLabel>
       <FormControl>
         <InputOTP maxLength={6} {...field}>

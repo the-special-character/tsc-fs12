@@ -1,10 +1,11 @@
 import React from "react";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { FormControl, FormItem, FormLabel, FormMessage } from "../ui/form";
+import { cn } from "../../lib/utils";
 
-const FormRadioGroup = ({ field, options, label }) => {
+const FormRadioGroup = ({ field, options, label, className }) => {
   return (
-    <FormItem className="space-y-3">
+    <FormItem className={cn("space-y-3", className)}>
       <FormLabel>{label}</FormLabel>
       <FormControl>
         <RadioGroup

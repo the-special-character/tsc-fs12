@@ -10,9 +10,9 @@ import {
   FormMessage,
 } from "../ui/form";
 
-const FormInput = ({ field, label, ...rest }) => {
+const FormInput = ({ field, label, className, ...rest }) => {
   return (
-    <FormItem>
+    <FormItem className={className}>
       <FormLabel>{label}</FormLabel>
       <FormControl>
         <Input {...field} {...rest} />

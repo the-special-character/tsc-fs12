@@ -13,9 +13,9 @@ import { Calendar } from "../ui/calendar";
 import { cn } from "../../lib/utils";
 import { format } from "date-fns";
 
-const FormDatePicker = ({ field }) => {
+const FormDatePicker = ({ field, className }) => {
   return (
-    <FormItem className="flex flex-col">
+    <FormItem className={cn("flex flex-col", className)}>
       <FormLabel>Date of birth</FormLabel>
       <Popover>
         <PopoverTrigger asChild>

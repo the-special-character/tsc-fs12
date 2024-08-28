@@ -7,6 +7,7 @@ import FormCheckboxGroup from "../components/form/CheckboxGroup";
 import FormDatePicker from "../components/form/FormDatePicker";
 import FormComboBox from "../components/form/FormComboBox";
 import FormOTP from "../components/form/FormOTP";
+import FormTextArea from "../components/form/CustomTextArea";
 
 const fields = [
   {
@@ -23,6 +24,7 @@ const fields = [
         message: "Email is mendatory..",
       },
     },
+    className: "col-span-full",
   },
   {
     component: FormInput,
@@ -36,6 +38,20 @@ const fields = [
       required: {
         value: true,
         message: "Password is mendatory..",
+      },
+    },
+    className: "col-span-full",
+  },
+  {
+    component: FormTextArea,
+    label: "Details",
+    placeholder: "Enter your message here...",
+    name: "details",
+    defaultValue: "",
+    rules: {
+      required: {
+        value: true,
+        message: "Details is mendatory..",
       },
     },
   },
@@ -148,7 +164,7 @@ function Login() {
 
   return (
     <>
-      <CustomForm fields={fields} onSubmit={onSubmit} />
+      <CustomForm fields={fields} onSubmit={onSubmit} className="grid-cols-2" />
       <Button variant="outline" className="w-full">
         Login with Google
       </Button>
