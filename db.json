@@ -5,5 +5,25 @@
       "text": "sdf",
       "isDone": false
     }
+  ],
+  "users": [
+    {
+      "email": "yagnesh.modh@gmail.com",
+      "password": "$2a$10$RD86UI8MX/MkTHZnLMuHROxVKgh5QWdARiNDDce46UfYtKTk42MbS",
+      "name": "YAGNESH MODH",
+      "id": 1
+    },
+    {
+      "email": "yagnesh.modh1@gmail.com",
+      "password": "$2a$10$M4585Ld5LCZBe/sWdveaW.78YdSoTCcxwWZGbgLs5did2a2mpL9lW",
+      "name": "YAGNESH MODH",
+      "id": 2
+    },
+    {
+      "email": "yagnesh.modh2@gmail.com",
+      "password": "$2a$10$vXliCOYj.qdxNDs.2P/JJ.5aex5MV4UNaoGOO16R/yRXn3f19TnhW",
+      "name": "YAGNESH MODH",
+      "id": 3
+    }
   ]
 }
