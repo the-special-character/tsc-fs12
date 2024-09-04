@@ -5,5 +5,37 @@
       "text": "sdf",
       "isDone": false
     }
+  ],
+  "users": [
+    {
+      "email": "monikapatel21296@gmail.com",
+      "password": "$2a$10$kWOiJTvDVvmGrxgVpPz92e7xM0WXt1N9VDgaQQr0.zaWILszUSQLy",
+      "name": "MonikaHim",
+      "id": 1
+    },
+    {
+      "email": "mohim219@gmail.com",
+      "password": "$2a$10$J2TpaP9F5GobbA/yJ5ysw.5NJ1SPL76zvF8wfpR7A4HRee8PQ4zbW",
+      "name": "MonikaHim",
+      "id": 2
+    },
+    {
+      "email": "MonikaHimPatel02121996@gmail.com",
+      "password": "$2a$10$SzKHlaYSfNGA4vLREUJQFOSDuRVkDvpgHAkfSoE8vlJhwl4ZT/8L.",
+      "name": "MonikaHim Patel",
+      "id": 3
+    },
+    {
+      "email": "MonikaHimPatel021296@gmail.com",
+      "password": "$2a$10$MKxatfpzwIG3mxweeu5G6ODKcQlolYNqEqgiHXtNW3/cRazJafPZ6",
+      "name": "MonikaHim Patel",
+      "id": 4
+    },
+    {
+      "email": "naisargi525@gmail.com",
+      "password": "$2a$10$37ttJHAaPljv4.3ap/V66eQizoV0I4mX4TqZK5Cb1pTHNPmbiyVvi",
+      "name": "naisargi",
+      "id": 5
+    }
   ]
 }

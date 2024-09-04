@@ -6,6 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { FormControl, FormDescription, FormItem, FormLabel, FormMessage } from "../ui/form";
 
 const FormSelect = ({
   field,
@@ -33,7 +34,7 @@ const FormSelect = ({
         </SelectContent>
       </Select>
       {desc && <FormDescription>{desc}</FormDescription>}
-      <FormMessage />
+      <FormMessage  />
     </FormItem>
   );
 };

@@ -7,7 +7,7 @@ module.exports = {
   entry: "./src",
   plugins: [
     new HtmlWebpackPlugin({
-      title: "yagnesh modh",
+      title: "Monika Patel",
       template: "./public/index.html",
       filename: "index.html",
     }),

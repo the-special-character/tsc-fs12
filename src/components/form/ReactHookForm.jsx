@@ -13,15 +13,18 @@ const ReactHookForm = ({ fields, onSubmit, className }) => {
     ),
   });
 
+  console.log("form.formState.errors" , form.formState.errors);
   return (
     <Form {...form}>
-      <form
+
+    { form.formState.errors?.root?.message &&  <p className="text-red-700 text-center text-xl"> {form.formState.errors.root.message} </p>}
+ <form
         className={cn("grid gap-4", className)}
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit((data)=>onSubmit(data , form))}
       >
         {fields.map(
           ({ component: Component, name, defaultValue, rules, ...rest }) => (
-            <FormField
+            <FormField 
               key={name}
               control={form.control}
               name={name}
