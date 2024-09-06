@@ -67,6 +67,10 @@ const fields = [
         value: true,
         message: "Password is mendatory..",
       },
+      validate: (value) => {
+        return (watch) =>
+          value === watch("password") || `value should match with Password`;
+      },
     },
   },
 ];

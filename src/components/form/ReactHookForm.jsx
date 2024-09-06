@@ -25,15 +25,23 @@ const ReactHookForm = ({ fields, onSubmit, className }) => {
         onSubmit={form.handleSubmit((data) => onSubmit(data, form))}
       >
         {fields.map(
-          ({ component: Component, name, defaultValue, rules, ...rest }) => (
-            <FormField
-              key={name}
-              control={form.control}
-              name={name}
-              render={({ field }) => <Component field={field} {...rest} />}
-              rules={rules}
-            />
-          )
+          ({ component: Component, name, defaultValue, rules, ...rest }) => {
+            const { validate, ...restRules } = rules;
+            return (
+              <FormField
+                key={name}
+                control={form.control}
+                name={name}
+                render={({ field }) => <Component field={field} {...rest} />}
+                rules={{
+                  ...restRules,
+                  ...(validate && {
+                    validate: (value) => validate(value)(form.watch),
+                  }),
+                }}
+              />
+            );
+          }
         )}
 
         <Button
