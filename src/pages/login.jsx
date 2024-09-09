@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../components/ui/button";
 import ReactHookForm from "../components/form/ReactHookForm";
 import FormInput from "../components/form/Input";
 import { useNavigate } from "react-router-dom";
+import ThemContext from "../context/themeContext";
 
 const fields = [
   {
@@ -42,20 +43,34 @@ function Login() {
 
   const onSubmit = async (data, form) => {
     try {
-      const res = await fetch("http://localhost:3000/login", {
+      const response = await fetch("http://localhost:3000/login", {
         method: "POST",
-        body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
       });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json);
-      console.log(json);
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData || "Registration failed");
+      }
+
+      const result = await response.json();
+      console.log("Registration successful:", result);
+      localStorage.setItem("user", JSON.stringify(result));
+
+      // Optionally, you can navigate to a success page or login page
       navigate("/");
     } catch (error) {
-      form.setError("root", { message: error.message }, true);
+      console.error("Registration error:", error);
+      form.setError("root", {
+        type: "manual",
+        message: error.message || "An error occurred during registration",
+      });
     }
   };
 
@@ -65,6 +80,11 @@ function Login() {
       <Button variant="outline" className="w-full">
         Login with Google
       </Button>
+      <ThemContext.Consumer>
+        {(value) => {
+          return <p>{value.theme}</p>;
+        }}
+      </ThemContext.Consumer>
     </>
   );
 }

@@ -1,10 +1,18 @@
-import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const AuthLayout = () => {
   let location = useLocation();
+  const navigate = useNavigate();
 
   console.log(location);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
@@ -19,7 +27,7 @@ const AuthLayout = () => {
           <Outlet />
           <div className="mt-4 text-center text-sm">
             Already have an account?{" "}
-            <Link to="/login" className="underline">
+            <Link to="/auth" className="underline">
               Login
             </Link>
           </div>

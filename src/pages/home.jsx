@@ -1,6 +1,7 @@
 import React from "react";
 import ReactHookForm from "../components/form/ReactHookForm";
 import FormInput from "../components/form/Input";
+import ThemContext from "../context/themeContext";
 
 const fields = [
   {
@@ -55,11 +56,19 @@ const Home = () => {
     console.log(data);
   };
   return (
-    <ReactHookForm
-      fields={fields}
-      onSubmit={onSubmit}
-      className="grid-cols-3"
-    />
+    <>
+      <ThemContext.Consumer>
+        {(value) => {
+          return <p>{value?.theme}</p>;
+        }}
+      </ThemContext.Consumer>
+
+      <ReactHookForm
+        fields={fields}
+        onSubmit={onSubmit}
+        className="grid-cols-3"
+      />
+    </>
   );
 };
 

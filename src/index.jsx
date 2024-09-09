@@ -8,6 +8,7 @@ import Register from "./pages/register";
 import ForgotPassword from "./pages/forgotPassword";
 import AuthLayout from "./layouts/authLayout";
 import Dashboard from "./layouts/mainLayout";
+import { ThemeProvider } from "./context/themeContext";
 
 // Clear the existing HTML content
 document.body.innerHTML = '<div id="app"></div>';
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
   },
   {
     path: "auth",
-    element: <AuthLayout />,
+    element: (
+      <ThemeProvider>
+        <AuthLayout />
+      </ThemeProvider>
+    ),
     children: [
       {
         index: true,
