@@ -72,62 +72,30 @@ const fields = [
 ];
 
 function Register() {
-  const navigate = useNavigate();
-
-  const onSubmit = async (data, form) => {
-    try {
-      const response = await fetch("http://localhost:3000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          password: data.password,
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData || "Registration failed");
-      }
-
-      const result = await response.json();
-      console.log("Registration successful:", result);
-      localStorage.setItem("user", JSON.stringify(result));
-
-      // Optionally, you can navigate to a success page or login page
-      navigate("/");
-    } catch (error) {
-      console.error("Registration error:", error);
-      form.setError("root", {
-        type: "manual",
-        message: error.message || "An error occurred during registration",
-      });
-    }
-  };
-
   return (
-    <>
-      <CustomForm fields={fields} onSubmit={onSubmit} />
+    <AuthContext.Consumer>
+      {({ register }) => (
+        <>
+          <CustomForm fields={fields} onSubmit={register} />
 
-      <Button variant="outline" className="w-full">
-        Register with Google
-      </Button>
-      <ThemContext.Consumer>
-        {(value) => {
-          return (
-            <>
-              <p>{value?.theme}</p>
-              <button type="button" onClick={() => value.setTheme("light")}>
-                Change Theme
-              </button>
-            </>
-          );
-        }}
-      </ThemContext.Consumer>
-    </>
+          <Button variant="outline" className="w-full">
+            Register with Google
+          </Button>
+          <ThemContext.Consumer>
+            {(value) => {
+              return (
+                <>
+                  <p>{value?.theme}</p>
+                  <button type="button" onClick={() => value.setTheme("light")}>
+                    Change Theme
+                  </button>
+                </>
+              );
+            }}
+          </ThemContext.Consumer>
+        </>
+      )}
+    </AuthContext.Consumer>
   );
 }
 

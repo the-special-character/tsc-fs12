@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import ReactHookForm from "../components/form/ReactHookForm";
 import FormInput from "../components/form/Input";
 import { useNavigate } from "react-router-dom";
 import ThemContext from "../context/themeContext";
+import AuthContext from "../context/authContext";
 
 const fields = [
   {
@@ -39,44 +40,10 @@ const fields = [
 ];
 
 function Login() {
-  const navigate = useNavigate();
-
-  const onSubmit = async (data, form) => {
-    try {
-      const response = await fetch("http://localhost:3000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: data.email,
-          password: data.password,
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData || "Registration failed");
-      }
-
-      const result = await response.json();
-      console.log("Registration successful:", result);
-      localStorage.setItem("user", JSON.stringify(result));
-
-      // Optionally, you can navigate to a success page or login page
-      navigate("/");
-    } catch (error) {
-      console.error("Registration error:", error);
-      form.setError("root", {
-        type: "manual",
-        message: error.message || "An error occurred during registration",
-      });
-    }
-  };
-
+  const { login } = useContext(AuthContext);
   return (
     <>
-      <ReactHookForm fields={fields} onSubmit={onSubmit} />
+      <ReactHookForm fields={fields} onSubmit={login} />
       <Button variant="outline" className="w-full">
         Login with Google
       </Button>

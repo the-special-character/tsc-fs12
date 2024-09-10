@@ -38,6 +38,7 @@ import {
   TooltipTrigger,
 } from "../components/ui/tooltip";
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import AuthContext from "../context/authContext";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -240,13 +241,18 @@ function Dashboard() {
                 />
               </Button>
             </DropdownMenuTrigger>
+
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <AuthContext.Consumer>
+                {({ logout }) => (
+                  <DropdownMenuItem onClick={logout}>Logout</DropdownMenuItem>
+                )}
+              </AuthContext.Consumer>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
