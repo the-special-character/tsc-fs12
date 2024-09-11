@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Home,
   LineChart,
@@ -42,13 +42,13 @@ import AuthContext from "../context/authContext";
 
 function Dashboard() {
   const navigate = useNavigate();
+  const { user, logout } = useContext(AuthContext);
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
     if (!user) {
       navigate("/auth");
     }
-  }, []);
+  }, [user]);
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
@@ -248,11 +248,7 @@ function Dashboard() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <AuthContext.Consumer>
-                {({ logout }) => (
-                  <DropdownMenuItem onClick={logout}>Logout</DropdownMenuItem>
-                )}
-              </AuthContext.Consumer>
+              <DropdownMenuItem onClick={logout}>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>

@@ -1,10 +1,15 @@
-import React, { createContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const navigate = useNavigate();
+  const [user, setUser] = useState(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      return JSON.parse(user);
+    }
+    return null;
+  });
 
   const authApiCall = async (url, data, form) => {
     try {
@@ -23,9 +28,9 @@ export const AuthProvider = ({ children }) => {
 
       const result = await response.json();
       localStorage.setItem("user", JSON.stringify(result));
+      setUser(result);
 
       // Optionally, you can navigate to a success page or login page
-      navigate("/");
     } catch (error) {
       form.setError("root", {
         type: "manual",
@@ -59,11 +64,11 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.clear();
-    navigate("/auth");
+    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ login, register, logout }}>
+    <AuthContext.Provider value={{ login, register, logout, user }}>
       {children}
     </AuthContext.Provider>
   );

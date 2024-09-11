@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import AuthContext from "../context/authContext";
 
 const AuthLayout = () => {
-  let location = useLocation();
   const navigate = useNavigate();
-
-  console.log(location);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
     if (user) {
       navigate("/");
     }
-  }, []);
+  }, [user]);
 
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">

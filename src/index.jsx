@@ -15,6 +15,7 @@ import AuthLayout from "./layouts/authLayout";
 import Dashboard from "./layouts/mainLayout";
 import { ThemeProvider } from "./context/themeContext";
 import { AuthProvider } from "./context/authContext";
+import { ProductProvider } from "./context/productContext";
 
 // Clear the existing HTML content
 document.body.innerHTML = '<div id="app"></div>';
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Dashboard />,
+        element: (
+          <ProductProvider>
+            <Dashboard />
+          </ProductProvider>
+        ),
         children: [
           {
             index: true,
