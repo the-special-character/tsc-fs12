@@ -4,13 +4,12 @@ import { Button } from "../ui/button";
 import { Form, FormField } from "../ui/form";
 import { cn } from "../../lib/utils";
 
-const ReactHookForm = ({ fields, onSubmit, className }) => {
+const ReactHookForm = ({ fields, onSubmit, className, defaultValues }) => {
   const form = useForm({
     mode: "all",
-    defaultValues: fields.reduce(
-      (p, c) => ({ ...p, [c.name]: c.defaultValue }),
-      {}
-    ),
+    defaultValues:
+      defaultValues ||
+      fields.reduce((p, c) => ({ ...p, [c.name]: c.defaultValue }), {}),
   });
 
   return (

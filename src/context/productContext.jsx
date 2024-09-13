@@ -20,16 +20,46 @@ export const ProductProvider = ({ children }) => {
 
   const addProducts = async (product) => {
     try {
+      // Create a FormData object to send the file
+      const formData = new FormData();
+      formData.append("file", product.image);
+      formData.append("upload_preset", "tsc_fs_14"); // Replace with your Cloudinary upload preset
+
+      // Upload image to Cloudinary
+      const cloudinaryResponse = await fetch(
+        "https://api.cloudinary.com/v1_1/dnxzgxivo/image/upload", // Replace with your Cloudinary cloud name
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const cloudinaryData = await cloudinaryResponse.json();
+
+      if (!cloudinaryResponse.ok) {
+        throw new Error(cloudinaryData.error.message);
+      }
+
+      // Replace the image file with the Cloudinary URL
+      const productWithCloudinaryUrl = {
+        ...product,
+        price: Number(product.price),
+        image: cloudinaryData.secure_url,
+      };
+
+      // Now proceed with adding the product to your database
       const response = await fetch("http://localhost:3000/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(product),
+        body: JSON.stringify(productWithCloudinaryUrl),
       });
+
       if (!response.ok) {
         throw new Error("Failed to add product");
       }
+
       const data = await response.json();
       setProducts([...Products, data]);
     } catch (error) {

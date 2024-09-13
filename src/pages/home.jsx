@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   Table,
@@ -93,6 +93,7 @@ const fields = [
     name: "image",
     type: "file",
     defaultValue: "",
+    className: "w-full",
     rules: {
       required: {
         value: true,
@@ -104,17 +105,24 @@ const fields = [
 
 const Home = () => {
   const { Products, loadProducts, addProducts } = useContext(ProductContext);
-
+  const [updatedObject, setUpdatedObject] = useState(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
   useEffect(() => {
     loadProducts();
   }, []);
 
   return (
     <div>
-      <Dialog>
-        <DialogTrigger asChild>
-          <button className="mb-4">Add Product</button>
-        </DialogTrigger>
+      <button
+        className="mb-4"
+        onClick={() => {
+          setUpdatedObject(null);
+          setDialogOpen(true);
+        }}
+      >
+        Add Product
+      </button>
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Add New Product</DialogTitle>
@@ -122,7 +130,12 @@ const Home = () => {
               Enter the details of the new product here.
             </DialogDescription>
           </DialogHeader>
-          <ReactHookForm fields={fields} onSubmit={addProducts} />
+          <ReactHookForm
+            fields={fields}
+            onSubmit={addProducts}
+            defaultValues={updatedObject}
+            className="grid-cols-2"
+          />
         </DialogContent>
       </Dialog>
       <Table>
@@ -149,7 +162,12 @@ const Home = () => {
                 <button onClick={() => handleViewProduct(product.id)}>
                   View
                 </button>
-                <button onClick={() => handleUpdateProduct(product.id)}>
+                <button
+                  onClick={() => {
+                    setUpdatedObject(product);
+                    setDialogOpen(true);
+                  }}
+                >
                   Update
                 </button>
               </TableCell>
