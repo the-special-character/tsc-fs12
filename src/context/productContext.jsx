@@ -18,7 +18,7 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  const addProducts = async (product) => {
+  const addProduct = async (product) => {
     try {
       // Create a FormData object to send the file
       const formData = new FormData();
@@ -67,8 +67,33 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  const updateProducts = async (product) => {
+  const updateProduct = async (product) => {
     try {
+      const formData = new FormData();
+      formData.append("file", product.image);
+      formData.append("upload_preset", "tsc_fs_14"); // Replace with your Cloudinary upload preset
+
+      // Upload image to Cloudinary
+      const cloudinaryResponse = await fetch(
+        "https://api.cloudinary.com/v1_1/dnxzgxivo/image/upload", // Replace with your Cloudinary cloud name
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const cloudinaryData = await cloudinaryResponse.json();
+
+      if (!cloudinaryResponse.ok) {
+        throw new Error(cloudinaryData.error.message);
+      }
+
+      // Replace the image file with the Cloudinary URL
+      const productWithCloudinaryUrl = {
+        ...product,
+        price: Number(product.price),
+        image: cloudinaryData.secure_url,
+      };
       const response = await fetch(
         `http://localhost:3000/products/${product.id}`,
         {
@@ -76,7 +101,7 @@ export const ProductProvider = ({ children }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(product),
+          body: JSON.stringify(productWithCloudinaryUrl),
         }
       );
       if (!response.ok) {
@@ -89,7 +114,7 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  const deleteProducts = async (id) => {
+  const deleteProduct = async (id) => {
     try {
       const response = await fetch(`http://localhost:3000/products/${id}`, {
         method: "DELETE",
@@ -104,9 +129,9 @@ export const ProductProvider = ({ children }) => {
       value={{
         Products,
         loadProducts,
-        addProducts,
-        updateProducts,
-        deleteProducts,
+        addProduct,
+        updateProduct,
+        deleteProduct,
       }}
     >
       {children}

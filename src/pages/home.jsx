@@ -104,7 +104,8 @@ const fields = [
 ];
 
 const Home = () => {
-  const { Products, loadProducts, addProducts } = useContext(ProductContext);
+  const { Products, loadProducts, addProduct, updateProduct } =
+    useContext(ProductContext);
   const [updatedObject, setUpdatedObject] = useState(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   useEffect(() => {
@@ -132,7 +133,13 @@ const Home = () => {
           </DialogHeader>
           <ReactHookForm
             fields={fields}
-            onSubmit={addProducts}
+            onSubmit={(data) => {
+              if (data.id) {
+                updateProduct(data);
+              } else {
+                addProduct(data);
+              }
+            }}
             defaultValues={updatedObject}
             className="grid-cols-2"
           />
@@ -164,8 +171,23 @@ const Home = () => {
                 </button>
                 <button
                   onClick={() => {
-                    setUpdatedObject(product);
-                    setDialogOpen(true);
+                    const convertImageUrlToFile = async (imageUrl) => {
+                      const response = await fetch(imageUrl);
+                      const blob = await response.blob();
+                      return new File([blob], "product_image.jpg", {
+                        type: blob.type,
+                      });
+                    };
+
+                    if (product.image) {
+                      convertImageUrlToFile(product.image).then((file) => {
+                        setUpdatedObject({ ...product, image: file });
+                        setDialogOpen(true);
+                      });
+                    } else {
+                      setUpdatedObject(product);
+                      setDialogOpen(true);
+                    }
                   }}
                 >
                   Update

@@ -3,7 +3,9 @@ import { useDropzone } from "react-dropzone";
 import { FormItem, FormLabel, FormMessage } from "../ui/form";
 
 const FileUpload = ({ field, label, className, ...rest }) => {
-  const [preview, setPreview] = useState(null);
+  const [preview, setPreview] = useState(
+    field.value ? URL.createObjectURL(field.value) : null
+  );
 
   const onDrop = useCallback(
     (acceptedFiles) => {
