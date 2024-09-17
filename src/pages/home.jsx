@@ -22,6 +22,8 @@ import FormInput from "../components/form/Input";
 import ReactHookForm from "../components/form/ReactHookForm";
 import FileUpload from "../components/form/upload";
 import FormComboBox from "../components/form/FormComboBox";
+import { cn } from "../lib/utils";
+import { StarFilledIcon } from "@radix-ui/react-icons";
 
 const fields = [
   {
@@ -133,12 +135,13 @@ const Home = () => {
           </DialogHeader>
           <ReactHookForm
             fields={fields}
-            onSubmit={(data) => {
+            onSubmit={async (data) => {
               if (data.id) {
-                updateProduct(data);
+                await updateProduct(data);
               } else {
-                addProduct(data);
+                await addProduct(data);
               }
+              setDialogOpen(false);
             }}
             defaultValues={updatedObject}
             className="grid-cols-2"
@@ -163,31 +166,99 @@ const Home = () => {
               <TableCell>{product.title}</TableCell>
               <TableCell>{product.description}</TableCell>
               <TableCell className="text-right">
-                ${product.price.toFixed(2)}
+                ${Number(product.price).toFixed(2)}
               </TableCell>
               <TableCell>
-                <button onClick={() => handleViewProduct(product.id)}>
-                  View
-                </button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button>View</button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl w-full h-screen overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle>Product Details</DialogTitle>
+                    </DialogHeader>
+                    <div className="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8">
+                      <div className="aspect-h-3 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
+                        <img
+                          alt={product.title}
+                          src={product.image}
+                          className="object-cover object-center"
+                        />
+                      </div>
+                      <div className="sm:col-span-8 lg:col-span-7">
+                        <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">
+                          {product.title}
+                        </h2>
+
+                        <section
+                          aria-labelledby="information-heading"
+                          className="mt-2"
+                        >
+                          <h3 id="information-heading" className="sr-only">
+                            Product information
+                          </h3>
+                          <p>{product.description}</p>
+
+                          <p>Category: {product.category}</p>
+
+                          <p className="text-2xl text-gray-900">
+                            ${Number(product.price).toFixed(2)}
+                          </p>
+
+                          {/* Reviews */}
+                          <div className="mt-6">
+                            <h4 className="sr-only">Reviews</h4>
+                            <div className="flex items-center">
+                              <div className="flex items-center">
+                                {[0, 1, 2, 3, 4].map((rating) => (
+                                  <StarFilledIcon
+                                    key={rating}
+                                    aria-hidden="true"
+                                    className={cn(
+                                      (product?.rating?.rate || 0) > rating
+                                        ? "text-gray-900"
+                                        : "text-gray-200",
+                                      "h-5 w-5 flex-shrink-0"
+                                    )}
+                                  />
+                                ))}
+                              </div>
+                              <p className="sr-only">
+                                {product?.rating?.rate || 0} out of 5 stars
+                              </p>
+                              <a
+                                href="#"
+                                className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                              >
+                                {product?.rating?.count || 0} reviews
+                              </a>
+                            </div>
+                          </div>
+                        </section>
+
+                        <section
+                          aria-labelledby="options-heading"
+                          className="mt-10"
+                        >
+                          <h3 id="options-heading" className="sr-only">
+                            Product options
+                          </h3>
+
+                          <button
+                            type="submit"
+                            className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                          >
+                            Add to bag
+                          </button>
+                        </section>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
                 <button
                   onClick={() => {
-                    const convertImageUrlToFile = async (imageUrl) => {
-                      const response = await fetch(imageUrl);
-                      const blob = await response.blob();
-                      return new File([blob], "product_image.jpg", {
-                        type: blob.type,
-                      });
-                    };
-
-                    if (product.image) {
-                      convertImageUrlToFile(product.image).then((file) => {
-                        setUpdatedObject({ ...product, image: file });
-                        setDialogOpen(true);
-                      });
-                    } else {
-                      setUpdatedObject(product);
-                      setDialogOpen(true);
-                    }
+                    setUpdatedObject(product);
+                    setDialogOpen(true);
                   }}
                 >
                   Update

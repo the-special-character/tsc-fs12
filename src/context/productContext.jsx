@@ -69,30 +69,42 @@ export const ProductProvider = ({ children }) => {
 
   const updateProduct = async (product) => {
     try {
-      const formData = new FormData();
-      formData.append("file", product.image);
-      formData.append("upload_preset", "tsc_fs_14"); // Replace with your Cloudinary upload preset
+      let imageUrl;
 
-      // Upload image to Cloudinary
-      const cloudinaryResponse = await fetch(
-        "https://api.cloudinary.com/v1_1/dnxzgxivo/image/upload", // Replace with your Cloudinary cloud name
-        {
-          method: "POST",
-          body: formData,
+      // Check if the image is already a URL (exists on Cloudinary)
+      if (
+        typeof product.image === "string" &&
+        product.image.startsWith("http")
+      ) {
+        imageUrl = product.image;
+      } else {
+        // If it's a new file, upload to Cloudinary
+        const formData = new FormData();
+        formData.append("file", product.image);
+        formData.append("upload_preset", "tsc_fs_14");
+
+        const cloudinaryResponse = await fetch(
+          "https://api.cloudinary.com/v1_1/dnxzgxivo/image/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        const cloudinaryData = await cloudinaryResponse.json();
+
+        if (!cloudinaryResponse.ok) {
+          throw new Error(cloudinaryData.error.message);
         }
-      );
 
-      const cloudinaryData = await cloudinaryResponse.json();
-
-      if (!cloudinaryResponse.ok) {
-        throw new Error(cloudinaryData.error.message);
+        imageUrl = cloudinaryData.secure_url;
       }
 
       // Replace the image file with the Cloudinary URL
       const productWithCloudinaryUrl = {
         ...product,
         price: Number(product.price),
-        image: cloudinaryData.secure_url,
+        image: imageUrl,
       };
       const response = await fetch(
         `http://localhost:3000/products/${product.id}`,
