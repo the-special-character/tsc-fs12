@@ -46,7 +46,9 @@ function Dashboard() {
 
   useEffect(() => {
     if (!user) {
-      navigate("/auth");
+      navigate("/auth", {
+        replace: true,
+      });
     }
   }, [user]);
 

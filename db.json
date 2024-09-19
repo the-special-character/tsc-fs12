@@ -60,6 +60,12 @@
       "password": "$2a$10$/Z5itX/YEkxyyGDsNz.VGulgEvUcx1C4S102v6sR0331e.njOqtS2",
       "name": "abc",
       "id": 9
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$GTRg5BolPvO1NUjs7nq4Qe9zP5GlOIhtiZvhR4uz/nARLR6DuXDvW",
+      "name": "Yagnesh Modh",
+      "id": 10
     }
   ],
   "products": [
