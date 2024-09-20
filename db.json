@@ -66,6 +66,12 @@
       "password": "$2a$10$GTRg5BolPvO1NUjs7nq4Qe9zP5GlOIhtiZvhR4uz/nARLR6DuXDvW",
       "name": "Yagnesh Modh",
       "id": 10
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "$2a$10$LrGDzbXfYd9XDpdjnes3R.9TQvWG9H4fwnCWc9lsI0g00oB/4ZvZO",
+      "name": "Yagnesh Modh",
+      "id": 11
     }
   ],
   "products": [
@@ -332,6 +338,14 @@
       "category": "electronics",
       "image": "https://res.cloudinary.com/dnxzgxivo/image/upload/v1726547132/v9wcdtou7wqliip0pccs.jpg",
       "id": 23
+    }
+  ],
+  "carts": [
+    {
+      "userId": 1,
+      "date": "2024-09-20T05:15:11.942Z",
+      "products": [],
+      "id": 1
     }
   ]
 }

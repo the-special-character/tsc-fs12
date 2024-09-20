@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 const ProductContext = createContext();
 
@@ -135,6 +135,10 @@ export const ProductProvider = ({ children }) => {
       console.error("Error deleting product:", error);
     }
   };
+
+  useEffect(() => {
+    loadProducts();
+  }, []);
 
   return (
     <ProductContext.Provider

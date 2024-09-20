@@ -106,13 +106,9 @@ const fields = [
 ];
 
 const Home = () => {
-  const { Products, loadProducts, addProduct, updateProduct } =
-    useContext(ProductContext);
+  const { Products, addProduct, updateProduct } = useContext(ProductContext);
   const [updatedObject, setUpdatedObject] = useState(null);
   const [dialogOpen, setDialogOpen] = useState(false);
-  useEffect(() => {
-    loadProducts();
-  }, []);
 
   return (
     <div>
