@@ -53,54 +53,96 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const addProductToCart = async (cart) => {
+  const addProductToCart = async (product) => {
     try {
-      // Now proceed with adding the cart to your database
-      const response = await fetch("http://localhost:3000/carts", {
-        method: "POST",
+      const updatedCart = {
+        ...Carts,
+        products: [...Carts.products, { productId: product.id, quantity: 1 }],
+      };
+
+      const response = await fetch(`http://localhost:3000/carts/${Carts.id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(cart),
+        body: JSON.stringify(updatedCart),
       });
-
       if (!response.ok) {
         throw new Error("Failed to add cart");
       }
-
       const data = await response.json();
-      setCarts([...Carts, data]);
+      localStorage.setItem("cart", JSON.stringify(data));
+      setCarts(data);
     } catch (error) {
       console.error("Error adding cart:", error);
     }
   };
 
-  const updateProductToCart = async (cart) => {
+  const updateProductToCart = async (product) => {
     try {
-      const response = await fetch(`http://localhost:3000/carts/${cart.id}`, {
+      const productIndex = Carts.products.findIndex(
+        (x) => x.productId === product.id
+      );
+
+      const updatedProductList = [
+        ...Carts.products.slice(0, productIndex),
+        {
+          ...Carts.products[productIndex],
+          quantity: Carts.products[productIndex].quantity + 1,
+        },
+        ...Carts.products.slice(productIndex + 1),
+      ];
+
+      const response = await fetch(`http://localhost:3000/carts/${Carts.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(cart),
+        body: JSON.stringify({
+          ...Carts,
+          products: updatedProductList,
+        }),
       });
       if (!response.ok) {
         throw new Error("Failed to update cart");
       }
       const data = await response.json();
-      setCarts(Carts.map((p) => (p.id === cart.id ? data : p)));
+      localStorage.setItem("cart", JSON.stringify(data));
+      setCarts(data);
     } catch (error) {
       console.error("Error updating cart:", error);
     }
   };
 
-  const deleteProductToCart = async (id) => {
+  const deleteProductToCart = async (product) => {
     try {
-      const response = await fetch(`http://localhost:3000/carts/${id}`, {
-        method: "DELETE",
+      const productIndex = Carts.products.findIndex(
+        (x) => x.productId === product.id
+      );
+
+      const updatedProductList = [
+        ...Carts.products.slice(0, productIndex),
+        ...Carts.products.slice(productIndex + 1),
+      ];
+
+      const response = await fetch(`http://localhost:3000/carts/${Carts.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...Carts,
+          products: updatedProductList,
+        }),
       });
+      if (!response.ok) {
+        throw new Error("Failed to update cart");
+      }
+      const data = await response.json();
+      localStorage.setItem("cart", JSON.stringify(data));
+      setCarts(data);
     } catch (error) {
-      console.error("Error deleting cart:", error);
+      console.error("Error updating cart:", error);
     }
   };
 

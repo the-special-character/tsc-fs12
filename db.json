@@ -343,8 +343,13 @@
   "carts": [
     {
       "userId": 1,
-      "date": "2024-09-20T05:15:11.942Z",
-      "products": [],
+      "date": "2024-09-27T06:02:39.371Z",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 2
+        }
+      ],
       "id": 1
     }
   ]
