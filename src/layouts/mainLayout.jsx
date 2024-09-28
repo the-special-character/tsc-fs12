@@ -39,6 +39,7 @@ import {
 } from "../components/ui/tooltip";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import AuthContext from "../context/authContext";
+import Cart from "../components/cart";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -227,6 +228,7 @@ function Dashboard() {
               className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
             />
           </div>
+          <Cart />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button

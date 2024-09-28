@@ -78,7 +78,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const updateProductToCart = async (product) => {
+  const updateProductToCart = async (product, quantity) => {
     try {
       const productIndex = Carts.products.findIndex(
         (x) => x.productId === product.id
@@ -88,7 +88,7 @@ export const CartProvider = ({ children }) => {
         ...Carts.products.slice(0, productIndex),
         {
           ...Carts.products[productIndex],
-          quantity: Carts.products[productIndex].quantity + 1,
+          quantity: Carts.products[productIndex].quantity + quantity,
         },
         ...Carts.products.slice(productIndex + 1),
       ];

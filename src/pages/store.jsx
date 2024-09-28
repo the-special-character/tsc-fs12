@@ -47,7 +47,7 @@ const Store = () => {
                 <>
                   <Button
                     className="flex-1"
-                    onClick={() => updateProductToCart(product)}
+                    onClick={() => updateProductToCart(product, 1)}
                   >
                     +
                   </Button>
@@ -58,7 +58,7 @@ const Store = () => {
                     className="flex-1"
                     onClick={() => {
                       if (productInCart.quantity > 1) {
-                        updateProductToCart(product);
+                        updateProductToCart(product, -1);
                       } else {
                         deleteProductToCart(product);
                       }

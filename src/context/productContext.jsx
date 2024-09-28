@@ -12,6 +12,8 @@ export const ProductProvider = ({ children }) => {
         throw new Error("Failed to fetch products");
       }
       const data = await response.json();
+      console.log("data", data);
+
       setProducts(data);
     } catch (error) {
       console.error("Error loading products:", error);
@@ -137,6 +139,8 @@ export const ProductProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    console.log("Use effect");
+
     loadProducts();
   }, []);
 

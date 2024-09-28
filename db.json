@@ -72,6 +72,12 @@
       "password": "$2a$10$LrGDzbXfYd9XDpdjnes3R.9TQvWG9H4fwnCWc9lsI0g00oB/4ZvZO",
       "name": "Yagnesh Modh",
       "id": 11
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "$2a$10$.uExV2Mv7omIjygk.6K31.IJMDOdUT2pL0TriUvYLpOwX8ICHNIhS",
+      "name": "Ronak Bhavsar",
+      "id": 12
     }
   ],
   "products": [
@@ -346,11 +352,22 @@
       "date": "2024-09-27T06:02:39.371Z",
       "products": [
         {
-          "productId": 1,
-          "quantity": 2
+          "productId": 3,
+          "quantity": 1
         }
       ],
       "id": 1
+    },
+    {
+      "userId": 1,
+      "date": "2024-09-28T05:54:47.477Z",
+      "products": [
+        {
+          "productId": 2,
+          "quantity": 2
+        }
+      ],
+      "id": 2
     }
   ]
 }
