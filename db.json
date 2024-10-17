@@ -344,6 +344,41 @@
       "category": "electronics",
       "image": "https://res.cloudinary.com/dnxzgxivo/image/upload/v1726547132/v9wcdtou7wqliip0pccs.jpg",
       "id": 23
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "Password1!",
+      "id": 24
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "Password1!",
+      "id": 25
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "Password1!",
+      "id": 26
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "Password1!",
+      "id": 27
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "Password1!",
+      "id": 28
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "Password1!",
+      "id": 29
+    },
+    {
+      "email": "ronak@thespecialcharacter.com",
+      "password": "Password1!",
+      "id": 30
     }
   ],
   "carts": [
@@ -368,6 +403,122 @@
         }
       ],
       "id": 2
+    }
+  ],
+  "quiz": [
+    {
+      "name": "HTML",
+      "questions": [
+        {
+          "question": "What does HTML stand for?",
+          "options": [
+            { "value": "a", "text": "Hyper Text Markup Language" },
+            { "value": "b", "text": "Hyperlinks and Text Markup Language" },
+            { "value": "c", "text": "Home Tool Markup Language" },
+            { "value": "d", "text": "Hyperlinking Textual Markup Language" }
+          ],
+          "correctAnswer": "a",
+          "marks": 10
+        },
+        {
+          "question": "Which HTML tag is used to define an internal style sheet?",
+          "options": [
+            { "value": "a", "text": "<script>" },
+            { "value": "b", "text": "<style>" },
+            { "value": "c", "text": "<css>" },
+            { "value": "d", "text": "<link>" }
+          ],
+          "correctAnswer": "b",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "name": "CSS",
+      "questions": [
+        {
+          "question": "Which CSS property is used to change the background color?",
+          "options": [
+            { "value": "a", "text": "color" },
+            { "value": "b", "text": "background-color" },
+            { "value": "c", "text": "bg-color" },
+            { "value": "d", "text": "background-image" }
+          ],
+          "correctAnswer": "b",
+          "marks": 10
+        },
+        {
+          "question": "How do you add a comment in CSS?",
+          "options": [
+            { "value": "a", "text": "// This is a comment" },
+            { "value": "b", "text": "/* This is a comment */" },
+            { "value": "c", "text": "<!-- This is a comment -->" },
+            { "value": "d", "text": "//* This is a comment */" }
+          ],
+          "correctAnswer": "b",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "questions": [
+        {
+          "question": "Which of the following is not a reserved word in JavaScript?",
+          "options": [
+            { "value": "a", "text": "interface" },
+            { "value": "b", "text": "throws" },
+            { "value": "c", "text": "program" },
+            { "value": "d", "text": "short" }
+          ],
+          "correctAnswer": "c",
+          "marks": 10
+        },
+        {
+          "question": "What is the correct way to write a JavaScript array?",
+          "options": [
+            {
+              "value": "a",
+              "text": "var colors = (1:'red', 2:'green', 3:'blue')"
+            },
+            { "value": "b", "text": "var colors = ['red', 'green', 'blue']" },
+            { "value": "c", "text": "var colors = 'red', 'green', 'blue'" },
+            {
+              "value": "d",
+              "text": "var colors = {1:'red', 2:'green', 3:'blue'}"
+            }
+          ],
+          "correctAnswer": "b",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "name": "Accessibility",
+      "questions": [
+        {
+          "question": "What does WCAG stand for in accessibility?",
+          "options": [
+            { "value": "a", "text": "Web Content Accessibility Guidelines" },
+            { "value": "b", "text": "World Content Accessibility Group" },
+            { "value": "c", "text": "Wide Content Accessibility Guide" },
+            { "value": "d", "text": "Web Communication Access Guidelines" }
+          ],
+          "correctAnswer": "a",
+          "marks": 10
+        },
+        {
+          "question": "Which HTML attribute can be used to define alternative text for an image?",
+          "options": [
+            { "value": "a", "text": "src" },
+            { "value": "b", "text": "alt" },
+            { "value": "c", "text": "title" },
+            { "value": "d", "text": "description" }
+          ],
+          "correctAnswer": "b",
+          "marks": 10
+        }
+      ]
     }
   ]
 }
